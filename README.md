@@ -1,4 +1,4 @@
-# React/GraphQL/Gatsby based Blog`
+# React/GraphQL/Gatsby based personal blog 
 Under construction........
 
 ## Running in development
