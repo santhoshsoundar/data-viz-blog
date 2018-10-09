@@ -1,0 +1,14 @@
+:root {
+    --main-bg-color: coral;
+    --main-txt-color: blue; 
+    --main-padding: 15px; 
+    
+    --main-mcnuttblue-color: #15a3d3;
+    --main-darkgrey-color: #474747;
+    --main-mediumgrey-color: #5b5b5b;
+    --main-devilgrey-color:#666;
+    --main-sevengrey-color:#777;
+    --main-eightgrey-color:#888;
+    --main-ninegrey-color:#999;
+
+}
