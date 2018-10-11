@@ -113,3 +113,23 @@
 // }
 
 // export default Bio
+
+// blogpost>>>>>
+// export const squareImage = graphql`
+//   fragment squareImage on File {
+//     childImageSharp {
+//       sizes(maxWidth: 800) {
+//         ...GatsbyImageSharpSizes
+//       }
+//     }
+//   }
+// `
+// export const squareImage = graphql`
+//   fragment squareImage on File {
+//     childImageSharp {
+//       fluid(maxWidth: 200, maxHeight: 200) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
+// `

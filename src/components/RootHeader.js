@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import { FiMail } from 'react-icons/fi'
 import { FaLinkedinIn, FaGithubAlt, FaTwitter } from 'react-icons/fa'
 import { rhythm, scale } from '../utils/typography'
+import './../styles/global.css'
 
 const header = (
   <h1
@@ -78,9 +79,8 @@ const RootHeader = () => {
         style={{
           fontStyle: 'italic',
           display: 'inline',
-          marginLeft: `0.1rem`,
-          fontSize: rhythm(0.6),
-          color: '#3D3D3D',
+          marginLeft: `0.2rem`,
+          fontSize: rhythm(0.61),
         }}
       >
         Data Visualization Engineer & Graduate in Data Science

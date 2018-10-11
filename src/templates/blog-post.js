@@ -4,10 +4,12 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    // const post = this.props.data.markdownRemark
+    const post = this.props.data.mdx
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pageContext
 
@@ -38,7 +40,12 @@ class BlogPostTemplate extends React.Component {
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         {header}
         <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+        <div>
+          <MDXRenderer scope={this.props.__mdxScope}>
+            {post.code.body}
+          </MDXRenderer>
+        </div>
         {/* <hr
           style={{
             marginBottom: '2px',
@@ -87,36 +94,19 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
-// export const squareImage = graphql`
-//   fragment squareImage on File {
-//     childImageSharp {
-//       sizes(maxWidth: 800) {
-//         ...GatsbyImageSharpSizes
-//       }
-//     }
-//   }
-// `
-// export const squareImage = graphql`
-//   fragment squareImage on File {
-//     childImageSharp {
-//       fluid(maxWidth: 200, maxHeight: 200) {
-//         ...GatsbyImageSharpFluid
-//       }
-//     }
-//   }
-// `
-
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
-      html
+      code {
+        body
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
