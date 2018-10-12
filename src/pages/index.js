@@ -2,17 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-
-import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import Quote from '../components/Quote'
 import Card from '../components/Card'
-import Intro from '../components/Intro'
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    // const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const posts = get(this, 'props.data.allMdx.edges')
     let image_data = [
       {
@@ -102,32 +98,14 @@ class BlogIndex extends React.Component {
         <Helmet
           title={siteTitle}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'DavaViz Blog' },
+            { name: 'keywords', content: 'D3.js DataViz' },
           ]}
         >
           <html lang="en" />
         </Helmet>
         {/* <Intro /> */}
         <Card image_info={image_data} />
-        {/* {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })} */}
         <Quote />
       </Layout>
     )
