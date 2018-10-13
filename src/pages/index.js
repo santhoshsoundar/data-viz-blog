@@ -104,7 +104,6 @@ class BlogIndex extends React.Component {
         >
           <html lang="en" />
         </Helmet>
-        {/* <Intro /> */}
         <Card image_info={image_data} />
         <Quote />
       </Layout>
