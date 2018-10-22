@@ -1,19 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Data Viz Blog',
+    author: 'Santhosh Soundararajan',
+    description:
+      'An over engineered Data Viz Blog in conjunction with Gatsby+MDX+React+GraphQL',
+    siteUrl: 'http://santhoshfiddle.com',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content`,
-        name: 'posts',
-      },
-    },
     {
       resolve: `gatsby-mdx`,
       options: {
@@ -22,8 +16,9 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-images`,
-            options: {
+            pluginOptions: {
               maxWidth: 590,
+              sizeByPixelDensity: true,
             },
           },
           {
@@ -36,13 +31,6 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/images`,
-        name: 'menu-images',
       },
     },
     `gatsby-plugin-netlify`,
@@ -68,13 +56,48 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Data Viz Blog`,
+        short_name: `DataVizBlog`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `minimal-ui`,
-        icon: `src/components/assets/profile-image.jpg`,
+        icon: `src/components/assets/favico.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/posts`,
+        name: 'posts',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/components/assets/card-img`,
+        name: 'cardImages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/components/assets/post-img`,
+        name: 'postImages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/components/assets/post-img/parallel`,
+        name: 'postParallel',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/components/assets/post-img/power-law`,
+        name: 'postPower',
       },
     },
   ],

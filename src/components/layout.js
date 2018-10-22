@@ -1,5 +1,5 @@
 import React from 'react'
-import RootHeader from './RootHeader'
+import IndexHeader from './IndexHeader'
 import { rhythm } from '../utils/typography'
 
 class Template extends React.Component {
@@ -17,7 +17,7 @@ class Template extends React.Component {
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
-          <RootHeader />
+          <IndexHeader />
           {children}
         </div>
       )

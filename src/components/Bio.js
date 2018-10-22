@@ -3,6 +3,7 @@ import profilePic from './assets/profile-image.jpg'
 import { rhythm } from '../utils/typography'
 
 const Bio = () => {
+  console('inside bio')
   return (
     <div
       style={{

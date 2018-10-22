@@ -3,7 +3,7 @@ import { rhythm } from '../utils/typography'
 import Radium from 'radium'
 import Img from 'gatsby-image'
 import './../styles/global.css'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 let cardFocus = {
     cursor: 'pointer',
@@ -11,29 +11,31 @@ let cardFocus = {
     boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.2)',
   },
   cardStyles = {
-    marginBottom: 5,
-    WebkitTransition: 'all .3s ease-in-out',
-    ':hover': cardFocus,
-    ':focus': cardFocus,
-    boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.15)',
-  },
-  titleStyles = {
-    fontFamily: 'PT Sans',
-    fontSize: '12px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    overflow: 'hidden',
-    color: 'var(--main-devilgrey-color)',
-    ':hover': {
-      color: 'var(--main-mcnuttblue-color)',
-      textDecoration: 'underline',
+    card: {
+      marginBottom: 5,
+      WebkitTransition: 'all .3s ease-in-out',
+      ':hover': cardFocus,
+      ':focus': cardFocus,
+      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.15)',
     },
-  },
-  subTitleStyles = {
-    fontFamily: 'PT Sans',
-    fontSize: '10.5px',
-    color: 'var(--main-darkgrey-color)',
-    fontWeight: '400',
+    title: {
+      fontFamily: 'PT Sans',
+      fontSize: '12px',
+      fontWeight: '600',
+      cursor: 'pointer',
+      overflow: 'hidden',
+      color: 'var(--main-devilgrey-color)',
+      ':hover': {
+        color: 'var(--main-mcnuttblue-color)',
+        textDecoration: 'underline',
+      },
+    },
+    subTitle: {
+      fontFamily: 'PT Sans',
+      fontSize: '10.5px',
+      color: 'var(--main-darkgrey-color)',
+      fontWeight: '400',
+    },
   }
 
 let Card = props => {
@@ -53,12 +55,12 @@ let Card = props => {
           textDecoration: 'none',
         }}
       >
-        <span style={titleStyles} id={props.name + 'title'}>
-          <Img key={props.name} style={cardStyles} fluid={props.img} />
+        <span style={cardStyles.title} id={props.name + 'title'}>
+          <Img key={props.name} style={cardStyles.card} fluid={props.img} />
           {props.name}
           <br />
         </span>
-        <span style={subTitleStyles}>{props.company}</span>
+        <span style={cardStyles.subTitle}>{props.company}</span>
       </Link>
     </div>
   )
@@ -85,3 +87,13 @@ let CardList = prop => {
 }
 
 export default CardList
+
+export const pageQuery = graphql`
+  fragment cardFluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`

@@ -3,19 +3,17 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Layout from '../components/layout'
-import BlogHeader from '../components/BlogHeader'
-
+import PostHeader from '../components/PostHeader'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-
     return (
       <Layout location={this.props.location}>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <BlogHeader postdate={post.frontmatter.date} />
+        <PostHeader postdate={post.frontmatter.date} />
         <h1>{post.frontmatter.title}</h1>
         <div>
           <MDXRenderer scope={this.props.__mdxScope}>

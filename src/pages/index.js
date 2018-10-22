@@ -21,11 +21,13 @@ class BlogIndex extends React.Component {
         name: 'BayD3 meetup @Google: Semiotic.js',
         company: '2018',
         img: this.props.data.thumbSemiotic.childImageSharp.fluid,
+        link: '/404/',
       },
       {
         name: 'Kepler Map',
         company: '2018',
         img: this.props.data.thumbKepler.childImageSharp.fluid,
+        link: '/hi-folks/',
       },
       {
         name: 'Reusable Module In Action',
@@ -134,112 +136,50 @@ export const pageQuery = graphql`
         }
       }
     }
-    thumbShirley: file(relativePath: { eq: "thumb_shirley.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbShirley: file(relativePath: { eq: "thumb_shirley.png" }) {
+      ...cardFluidImage
     }
-    thumbSemiotic: file(relativePath: { eq: "thumb_semiotic.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbSemiotic: file(relativePath: { eq: "thumb_semiotic.png" }) {
+      ...cardFluidImage
     }
-    thumbKepler: file(relativePath: { eq: "thumb_kepler.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbKepler: file(relativePath: { eq: "thumb_kepler.png" }) {
+      ...cardFluidImage
     }
-    thumbReusable: file(relativePath: { eq: "thumb_reusable.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbReusable: file(relativePath: { eq: "thumb_reusable.png" }) {
+      ...cardFluidImage
     }
-    thumbSf: file(relativePath: { eq: "thumb_sf_muni.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbSf: file(relativePath: { eq: "thumb_sf_muni.png" }) {
+      ...cardFluidImage
     }
-    thumbMagneto: file(relativePath: { eq: "thumb_magneto.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbMagneto: file(relativePath: { eq: "thumb_magneto.png" }) {
+      ...cardFluidImage
     }
-    thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.png" }) {
+      ...cardFluidImage
     }
-    thumbFaces: file(relativePath: { eq: "thumb_faces.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbFaces: file(relativePath: { eq: "thumb_faces.png" }) {
+      ...cardFluidImage
     }
-    thumbParallel: file(relativePath: { eq: "thumb_parallel.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbParallel: file(relativePath: { eq: "thumb_parallel.png" }) {
+      ...cardFluidImage
     }
-    thumbPrecinct: file(relativePath: { eq: "thumb_precinct.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbPrecinct: file(relativePath: { eq: "thumb_precinct.png" }) {
+      ...cardFluidImage
     }
-    thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.png" }) {
+      ...cardFluidImage
     }
-    thumbAirportBubble: file(
-      relativePath: { eq: "thumb_airport_bubble.webp" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbAirportBubble: file(relativePath: { eq: "thumb_airport_bubble.png" }) {
+      ...cardFluidImage
     }
-    thumbPower: file(relativePath: { eq: "thumb_power_law.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbPower: file(relativePath: { eq: "thumb_power_law.png" }) {
+      ...cardFluidImage
     }
-    thumbCollege: file(relativePath: { eq: "thumb_college_majors.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbCollege: file(relativePath: { eq: "thumb_college_majors.png" }) {
+      ...cardFluidImage
     }
-    thumbNeofj: file(relativePath: { eq: "thumb_neofj.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbNeofj: file(relativePath: { eq: "thumb_neofj.png" }) {
+      ...cardFluidImage
     }
   }
 `

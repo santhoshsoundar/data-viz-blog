@@ -133,3 +133,150 @@
 //     }
 //   }
 // `
+
+// multi images
+
+// export const pageQuery = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+//       edges {
+//         node {
+//           excerpt
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             date(formatString: "DD MMMM, YYYY")
+//             title
+//           }
+//         }
+//       }
+//     }
+//     thumbShirley: file(relativePath: { eq: "thumb_shirley.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbSemiotic: file(relativePath: { eq: "thumb_semiotic.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbKepler: file(relativePath: { eq: "thumb_kepler.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbReusable: file(relativePath: { eq: "thumb_reusable.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbSf: file(relativePath: { eq: "thumb_sf_muni.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbMagneto: file(relativePath: { eq: "thumb_magneto.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbFaces: file(relativePath: { eq: "thumb_faces.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbParallel: file(relativePath: { eq: "thumb_parallel.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbPrecinct: file(relativePath: { eq: "thumb_precinct.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbAirportBubble: file(
+//       relativePath: { eq: "thumb_airport_bubble.webp" }
+//     ) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbPower: file(relativePath: { eq: "thumb_power_law.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbCollege: file(relativePath: { eq: "thumb_college_majors.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     thumbNeofj: file(relativePath: { eq: "thumb_neofj.webp" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `
+
+{
+  /* <ImageComponentsPro textual={'thumbPower'}/> 
+
+![Chinese Salty Egg](./salty_egg.jpg)
+
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
+![Image from Source file system](thumb_faces.png)
+
+![Image from current relative path](../src/components/assets/profile-image.jpg)
+
+![Image from src relative path](./components/assets/profile-image.jpg) */
+}
