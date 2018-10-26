@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Quote from '../components/Quote'
 import Card from '../components/Card'
+import Bio from '../components/Bio'
 
 class BlogIndex extends React.Component {
   render() {
@@ -13,21 +14,24 @@ class BlogIndex extends React.Component {
     let image_data = [
       {
         name: 'A Day with Shirley Wu',
-        company: '2018',
+        company: 'May, 2018',
         img: this.props.data.thumbShirley.childImageSharp.fluid,
         link: '/hello-world/',
+        tweet: 'http://www.twitter.com',
+        github: 'http://www.github.com',
       },
       {
         name: 'BayD3 meetup @Google: Semiotic.js',
-        company: '2018',
+        company: ' Jan, 2018',
         img: this.props.data.thumbSemiotic.childImageSharp.fluid,
         link: '/404/',
       },
       {
         name: 'Kepler Map',
-        company: '2018',
+        company: 'August, 2018',
         img: this.props.data.thumbKepler.childImageSharp.fluid,
         link: '/hi-folks/',
+        github: 'http://www.github.com',
       },
       {
         name: 'Reusable Module In Action',
@@ -39,6 +43,7 @@ class BlogIndex extends React.Component {
         name: 'Live Map of SFMuni Bus Service',
         company: '2017',
         img: this.props.data.thumbSf.childImageSharp.fluid,
+        github: 'http://www.github.com',
       },
       {
         name: 'Dashboard with Crossfilter & DC',
@@ -71,11 +76,6 @@ class BlogIndex extends React.Component {
         img: this.props.data.thumbAirportBar.childImageSharp.fluid,
       },
       {
-        name: 'Bubble version of Airport Evolution',
-        company: '2015',
-        img: this.props.data.thumbAirportBubble.childImageSharp.fluid,
-      },
-      {
         name: 'Exploring Visual Perception',
         company: '2015',
         img: this.props.data.thumbPower.childImageSharp.fluid,
@@ -84,11 +84,6 @@ class BlogIndex extends React.Component {
         name: 'College Majors Outcome Analysis',
         company: '2015',
         img: this.props.data.thumbCollege.childImageSharp.fluid,
-      },
-      {
-        name: 'Neo4j Friends Map',
-        company: '2015',
-        img: this.props.data.thumbNeofj.childImageSharp.fluid,
       },
     ]
 
@@ -107,6 +102,7 @@ class BlogIndex extends React.Component {
           <html lang="en" />
         </Helmet>
         <Card image_info={image_data} />
+        <Bio />
         <Quote />
       </Layout>
     )
@@ -169,16 +165,10 @@ export const pageQuery = graphql`
     thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.png" }) {
       ...cardFluidImage
     }
-    thumbAirportBubble: file(relativePath: { eq: "thumb_airport_bubble.png" }) {
-      ...cardFluidImage
-    }
     thumbPower: file(relativePath: { eq: "thumb_power_law.png" }) {
       ...cardFluidImage
     }
     thumbCollege: file(relativePath: { eq: "thumb_college_majors.png" }) {
-      ...cardFluidImage
-    }
-    thumbNeofj: file(relativePath: { eq: "thumb_neofj.png" }) {
       ...cardFluidImage
     }
   }

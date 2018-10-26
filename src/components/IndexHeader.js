@@ -10,13 +10,14 @@ const header = (
     style={{
       ...scale(1.25),
       marginBottom: rhythm(-0.25),
-      marginTop: 0,
+      marginTop: rhythm(-0.25),
     }}
   >
     <Link
       style={{
         color: 'inherit',
         fontWeight: 400,
+        letterSpacing: '-2px',
         backgroundImage: 'none',
         boxShadow: 'none',
         textDecoration: 'none',
@@ -77,10 +78,11 @@ const RootHeader = () => {
       </ul>
       <p
         style={{
-          fontStyle: 'italic',
           display: 'inline',
           marginLeft: `0.2rem`,
-          fontSize: rhythm(0.61),
+          fontSize: rhythm(0.6),
+          fontStyle: 'italic',
+          color: '#777',
         }}
       >
         Data Visualization Engineer & Graduate in Data Science
