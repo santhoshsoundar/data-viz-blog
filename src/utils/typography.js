@@ -9,12 +9,8 @@ const typography = new Typography({
   baseLineHeight: 1.5,
   // googleFonts: [
   //   {
-  //     name: 'PT Sans',
-  //     styles: ['300', '400', '600', '700'],
-  //   },
-  //   {
-  //     name: 'PT Serif',
-  //     styles: ['300', '400', '600'],
+  //     name: 'Lora',
+  //     styles: ['300', '400', '400i', '700'],
   //   },
   // ],
   headerFontFamily: ['PT Sans', 'sans-serif'],
@@ -46,12 +42,23 @@ const typography = new Typography({
         boxShadow: 'none',
         backgroundImage: 'none',
       },
+      'a.cardIcons': {
+        color: 'var(--main-ninegrey-color)',
+      },
       'a.icons:hover, a.icons:active': {
         color: '#15c3d3',
+      },
+      'a.cardIcons:hover, a.cardIcons:active': {
+        color: 'var(--main-mcnuttblue-color)',
       },
       'h1,h2,h3,h4,h5,h6': {
         marginTop: rhythm(1.5),
         marginBottom: rhythm(0.5),
+      },
+      h1: {
+        fontSize: '54px',
+        fontWeight: 300,
+        letterSpacing: '-2px',
       },
       'ul,ol': {
         marginLeft: rhythm(2 / 3),
@@ -64,7 +71,7 @@ const typography = new Typography({
       // Blockquote styles.
       blockquote: {
         ...scale(1 / 5),
-        borderLeft: `${rhythm(3 / 16)} solid ${linkColor}`,
+        borderLeft: `${rhythm(3 / 24)} solid ${linkColor}`,
         color: gray(41),
         paddingLeft: rhythm(13 / 16),
         fontStyle: 'italic',

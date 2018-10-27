@@ -2,33 +2,36 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-
-import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import Quote from '../components/Quote'
 import Card from '../components/Card'
-import Intro from '../components/Intro'
+import Bio from '../components/Bio'
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const posts = get(this, 'props.data.allMdx.edges')
     let image_data = [
       {
         name: 'A Day with Shirley Wu',
-        company: '2018',
+        company: 'May, 2018',
         img: this.props.data.thumbShirley.childImageSharp.fluid,
         link: '/hello-world/',
+        tweet: 'http://www.twitter.com',
+        github: 'http://www.github.com',
       },
       {
         name: 'BayD3 meetup @Google: Semiotic.js',
-        company: '2018',
+        company: ' Jan, 2018',
         img: this.props.data.thumbSemiotic.childImageSharp.fluid,
+        link: '/404/',
       },
       {
         name: 'Kepler Map',
-        company: '2018',
+        company: 'August, 2018',
         img: this.props.data.thumbKepler.childImageSharp.fluid,
+        link: '/hi-folks/',
+        github: 'http://www.github.com',
       },
       {
         name: 'Reusable Module In Action',
@@ -40,6 +43,7 @@ class BlogIndex extends React.Component {
         name: 'Live Map of SFMuni Bus Service',
         company: '2017',
         img: this.props.data.thumbSf.childImageSharp.fluid,
+        github: 'http://www.github.com',
       },
       {
         name: 'Dashboard with Crossfilter & DC',
@@ -72,11 +76,6 @@ class BlogIndex extends React.Component {
         img: this.props.data.thumbAirportBar.childImageSharp.fluid,
       },
       {
-        name: 'Bubble version of Airport Evolution',
-        company: '2015',
-        img: this.props.data.thumbAirportBubble.childImageSharp.fluid,
-      },
-      {
         name: 'Exploring Visual Perception',
         company: '2015',
         img: this.props.data.thumbPower.childImageSharp.fluid,
@@ -85,11 +84,6 @@ class BlogIndex extends React.Component {
         name: 'College Majors Outcome Analysis',
         company: '2015',
         img: this.props.data.thumbCollege.childImageSharp.fluid,
-      },
-      {
-        name: 'Neo4j Friends Map',
-        company: '2015',
-        img: this.props.data.thumbNeofj.childImageSharp.fluid,
       },
     ]
 
@@ -101,32 +95,14 @@ class BlogIndex extends React.Component {
         <Helmet
           title={siteTitle}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'DavaViz Blog' },
+            { name: 'keywords', content: 'D3.js DataViz' },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        {/* <Intro /> */}
         <Card image_info={image_data} />
-        {/* {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })} */}
+        <Bio />
         <Quote />
       </Layout>
     )
@@ -142,7 +118,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
@@ -156,112 +132,44 @@ export const pageQuery = graphql`
         }
       }
     }
-    thumbShirley: file(relativePath: { eq: "thumb_shirley.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbShirley: file(relativePath: { eq: "thumb_shirley.png" }) {
+      ...cardFluidImage
     }
-    thumbSemiotic: file(relativePath: { eq: "thumb_semiotic.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbSemiotic: file(relativePath: { eq: "thumb_semiotic.png" }) {
+      ...cardFluidImage
     }
-    thumbKepler: file(relativePath: { eq: "thumb_kepler.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbKepler: file(relativePath: { eq: "thumb_kepler.png" }) {
+      ...cardFluidImage
     }
-    thumbReusable: file(relativePath: { eq: "thumb_reusable.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbReusable: file(relativePath: { eq: "thumb_reusable.png" }) {
+      ...cardFluidImage
     }
-    thumbSf: file(relativePath: { eq: "thumb_sf_muni.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbSf: file(relativePath: { eq: "thumb_sf_muni.png" }) {
+      ...cardFluidImage
     }
-    thumbMagneto: file(relativePath: { eq: "thumb_magneto.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbMagneto: file(relativePath: { eq: "thumb_magneto.png" }) {
+      ...cardFluidImage
     }
-    thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.png" }) {
+      ...cardFluidImage
     }
-    thumbFaces: file(relativePath: { eq: "thumb_faces.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbFaces: file(relativePath: { eq: "thumb_faces.png" }) {
+      ...cardFluidImage
     }
-    thumbParallel: file(relativePath: { eq: "thumb_parallel.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbParallel: file(relativePath: { eq: "thumb_parallel.png" }) {
+      ...cardFluidImage
     }
-    thumbPrecinct: file(relativePath: { eq: "thumb_precinct.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbPrecinct: file(relativePath: { eq: "thumb_precinct.png" }) {
+      ...cardFluidImage
     }
-    thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.png" }) {
+      ...cardFluidImage
     }
-    thumbAirportBubble: file(
-      relativePath: { eq: "thumb_airport_bubble.webp" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbPower: file(relativePath: { eq: "thumb_power_law.png" }) {
+      ...cardFluidImage
     }
-    thumbPower: file(relativePath: { eq: "thumb_power_law.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    thumbCollege: file(relativePath: { eq: "thumb_college_majors.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    thumbNeofj: file(relativePath: { eq: "thumb_neofj.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbCollege: file(relativePath: { eq: "thumb_college_majors.png" }) {
+      ...cardFluidImage
     }
   }
 `
