@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import { FiMail } from 'react-icons/fi'
 import { FaLinkedinIn, FaGithubAlt, FaTwitter } from 'react-icons/fa'
-import { rhythm, scale } from '../utils/typography'
-import './../styles/global.css'
+import { rhythm, scale } from '../../utils/typography'
+import './../../styles/global.css'
 
 const header = (
   <h1

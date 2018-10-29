@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Layout from '../components/layout'
-import PostHeader from '../components/PostHeader'
+import PostHeader from '../components/blog/PostHeader'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 class BlogPostTemplate extends React.Component {

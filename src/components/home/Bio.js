@@ -1,8 +1,10 @@
 import React from 'react'
-import './../styles/global.css'
+import './../../styles/global.css'
 import { FaChess, FaGraduationCap } from 'react-icons/fa'
 import { GoWatch } from 'react-icons/go'
-import { rhythm } from '../utils/typography'
+import { IoIosStopwatch, IoMdStopwatch } from 'react-icons/io'
+import { rhythm } from '../../utils/typography'
+import CircularFlow from '../charts/bio-circularFlow/CircularFlow'
 
 let listStyle = {
   marginLeft: rhythm(2 / 3),
@@ -38,21 +40,29 @@ export default () => {
         >
           <li style={listStyle}>
             {' '}
-            Playing chess, mostly Blits and Bullet with occational Bughouse play
-            for fun. <br />Feel free to challenge me at{' '}
-            <a href="https://www.chess.com/member/santhoshsoundar">
-              Chess.com <FaChess />
-            </a>{' '}
-          </li>
-          <li style={listStyle}>
-            {' '}
             Aquascaping full/semi-planted fresh water tanks & keeping schooling
             fishes
           </li>
           <li style={listStyle}>
             {' '}
-            Appreciating the intricacies of mechanical watches and horology in
-            general <GoWatch />
+            Exploring the intricacies of horology, specifically automatic
+            movements{' '}
+            <span
+              style={{
+                color: '#777',
+              }}
+            >
+              <GoWatch />
+              <IoMdStopwatch />
+            </span>
+          </li>
+          <li style={listStyle}>
+            {' '}
+            Playing chess, mostly Blits and Bullet with occational Bughouse play
+            for fun. <br />Feel free to challenge me at{' '}
+            <a href="https://www.chess.com/member/santhoshsoundar">
+              Chess.com <FaChess />
+            </a>{' '}
           </li>
         </ul>
         <p>
@@ -67,6 +77,7 @@ export default () => {
           during my masters untill I started working as a full time data
           visualization engineer. <br />
         </p>
+        <CircularFlow />
       </div>
     </section>
   )

@@ -3,9 +3,9 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import Quote from '../components/Quote'
-import Card from '../components/Card'
-import Bio from '../components/Bio'
+import Quote from '../components/home/Quote'
+import Card from '../components/home/Card'
+import Bio from '../components/home/Bio'
 
 class BlogIndex extends React.Component {
   render() {
@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
         name: 'BayD3 meetup @Google: Semiotic.js',
         company: ' Jan, 2018',
         img: this.props.data.thumbSemiotic.childImageSharp.fluid,
-        link: '/404/',
+        link: 'http://www.github.com',
       },
       {
         name: 'Kepler Map',
@@ -44,6 +44,8 @@ class BlogIndex extends React.Component {
         company: '2017',
         img: this.props.data.thumbSf.childImageSharp.fluid,
         github: 'http://www.github.com',
+        link: 'http://serene-temple-42286.herokuapp.com/',
+        external: 'http://serene-temple-42286.herokuapp.com/',
       },
       {
         name: 'Dashboard with Crossfilter & DC',

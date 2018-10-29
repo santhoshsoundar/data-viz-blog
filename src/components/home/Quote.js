@@ -1,6 +1,6 @@
 import React from 'react'
 import gray from 'gray-percentage'
-import { rhythm } from '../utils/typography'
+import { rhythm } from './../../utils/typography'
 
 const Quote = () => {
   return (

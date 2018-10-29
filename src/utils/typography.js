@@ -43,7 +43,7 @@ const typography = new Typography({
         backgroundImage: 'none',
       },
       'a.cardIcons': {
-        color: 'var(--main-ninegrey-color)',
+        color: 'var(--main-btwogrey-color)',
       },
       'a.icons:hover, a.icons:active': {
         color: '#15c3d3',

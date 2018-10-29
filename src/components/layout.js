@@ -1,5 +1,5 @@
 import React from 'react'
-import IndexHeader from './IndexHeader'
+import IndexHeader from './home/Header'
 import { rhythm } from '../utils/typography'
 
 class Template extends React.Component {

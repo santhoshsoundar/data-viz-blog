@@ -1,10 +1,10 @@
 import React from 'react'
-import { rhythm } from '../utils/typography'
+import { rhythm } from './../../utils/typography'
 import Radium from 'radium'
 import Img from 'gatsby-image'
-import './../styles/global.css'
+import './../../styles/global.css'
 import { Link, graphql } from 'gatsby'
-import { FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaTwitter, FaExternalLinkAlt } from 'react-icons/fa'
 
 let cardFocus = {
     cursor: 'pointer',
@@ -69,6 +69,7 @@ let Card = props => {
           {props.company}
         </span>
       </Link>
+
       {props.github && (
         <a href={props.github} className="cardIcons" aria-label={'Github-Menu'}>
           <span style={cardStyles.cardIcon}>
@@ -80,6 +81,17 @@ let Card = props => {
         <a href={props.tweet} className="cardIcons" aria-label={'Twitter-Menu'}>
           <span style={cardStyles.cardIcon}>
             <FaTwitter key={props.name} />{' '}
+          </span>
+        </a>
+      )}
+      {props.external && (
+        <a
+          href={props.external}
+          className="cardIcons"
+          aria-label={'External-Menu'}
+        >
+          <span style={cardStyles.cardIcon}>
+            <FaExternalLinkAlt key={props.name} />{' '}
           </span>
         </a>
       )}

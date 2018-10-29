@@ -25,6 +25,7 @@
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-typography": "next",
     "gatsby-remark-copy-linked-files": "next",
+    "gatsby-remark-emoji": "0.0.2",
     "gatsby-remark-images": "next",
     "gatsby-remark-prismjs": "next",
     "gatsby-remark-responsive-iframe": "next",
