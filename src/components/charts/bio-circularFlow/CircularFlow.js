@@ -3,6 +3,10 @@ import * as d3 from 'd3'
 import data from './data'
 
 class CircularFlow extends React.Component {
+  state = {
+    omegaa: 'Blue',
+  }
+
   componentDidMount() {
     var svg = d3.select(this._rootNode)
     var svg2 = d3.select(this._subNode)
@@ -11,38 +15,29 @@ class CircularFlow extends React.Component {
       .attr('width', '100%')
       .attr('height', '100%')
       .attr('fill', 'pink')
+      .on('click', () => {
+        console.log('clicked')
+        this.state.omegaa = 'CornflowerBlue'
+        console.log('update :' + this.state.omegaa)
+      })
 
     svg2
       .append('rect')
       .attr('width', '100%')
       .attr('height', '100%')
-      .attr('fill', 'blue')
+      .attr('fill', this.state.omegaa)
 
-    console.log(data)
-    console.log(data)
-    // d3.csv(
-    //   './data.csv',
-    //   function(d, i, columns) {
-    //     for (i = 1, t = 0; i < columns.length; ++i)
-    //       t += d[columns[i]] = +d[columns[i]]
-    //     d.total = t
-    //     return d
-    //   },
-    //   function(error, data) {
-    //     if (error) throw error
-    //     console.log(data)
-    //   }
-    // )
+    console.log('mount :' + this.state.omegaa)
   }
 
   shouldComponentUpdate() {
-    return false
+    console.log(d3.select(this._subNode))
   }
 
   _setRef(componentNode) {
     this._rootNode = componentNode
   }
-  _setSubRef(componentNodeSub) {
+  _setRefSub(componentNodeSub) {
     this._subNode = componentNodeSub
   }
 
@@ -59,7 +54,7 @@ class CircularFlow extends React.Component {
           className="radial-sub"
           width="344"
           height="420"
-          ref={this._setSubRef.bind(this)}
+          ref={this._setRefSub.bind(this)}
         />
       </div>
     )
