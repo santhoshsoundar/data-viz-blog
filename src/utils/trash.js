@@ -280,3 +280,96 @@
 
 ![Image from src relative path](./components/assets/profile-image.jpg) */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+thumbShirley: file(relativePath: { eq: "thumb_shirley.png" }) {
+  ...cardFluidImage
+}
+thumbSemiotic: file(relativePath: { eq: "thumb_semiotic.png" }) {
+  ...cardFluidImage
+}
+thumbKepler: file(relativePath: { eq: "thumb_kepler.png" }) {
+  ...cardFluidImage
+}
+thumbReusable: file(relativePath: { eq: "thumb_reusable.png" }) {
+  ...cardFluidImage
+}
+thumbSf: file(relativePath: { eq: "thumb_sf_muni.png" }) {
+  ...cardFluidImage
+}
+thumbMagneto: file(relativePath: { eq: "thumb_magneto.png" }) {
+  ...cardFluidImage
+}
+thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.png" }) {
+  ...cardFluidImage
+}
+thumbFaces: file(relativePath: { eq: "thumb_faces.png" }) {
+  ...cardFluidImage
+}
+thumbParallel: file(relativePath: { eq: "thumb_parallel.png" }) {
+  ...cardFluidImage
+}
+thumbPrecinct: file(relativePath: { eq: "thumb_precinct.png" }) {
+  ...cardFluidImage
+}
+thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.png" }) {
+  ...cardFluidImage
+}
+thumbPower: file(relativePath: { eq: "thumb_power_law.png" }) {
+  ...cardFluidImage
+}
+thumbCollege: file(relativePath: { eq: "thumb_college_majors.png" }) {
+  ...cardFluidImage
+}
+
+
+
+
+
+
+    // annotation.append("image")
+    //   .attr("xlink:href", annotateIcons['masters.png'])
+    //   .attr('opacity', 0.4)
+    //   .attr("height", 40)
+    //   .attr("width", 40)
+    //   .attr('transform', 'translate(' + outerRadius + ',' + -outerRadius + ')')
+
+    // annotation.append("image")
+    //   .attr("xlink:href", annotateIcons['intern.png'])
+    //   .attr('opacity', 0.4)
+    //   .attr("height", 40)
+    //   .attr("width", 40)
+    //   .attr('transform', 'translate(' + - outerRadius * 0.8 + ',' + outerRadius * 1.085 + ')')
+
+    // annotation.append("image")
+    //   .attr("xlink:href", annotateIcons['grad.png'])
+    //   .attr('opacity', 0.4)
+    //   .attr("height", 40)
+    //   .attr("width", 40)
+    //   .attr('transform', 'translate(' + - outerRadius * 1.225 + ',' + -outerRadius + ')')
+
+    // annotation.append('text')
+    //   .attr('class', 'annotext')
+    //   .text('Graduation')
+    //   .style('font-style', 'italic')
+    //   .attr('transform', 'translate(' + - outerRadius * 1.25 + ',' + -outerRadius * 0.985 + ')')
+
+    // annotation.append('text')
+    // .attr('class', 'annotext')
+    // .text('Internship')
+    // .style('font-style', 'italic')
+    // .attr('transform', 'translate(' + - outerRadius * 0.825 + ',' + outerRadius * 1.4 + ')')

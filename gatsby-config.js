@@ -101,5 +101,12 @@ module.exports = {
         name: 'postPower',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/components/charts/bio-circularFlow`,
+        name: 'circular',
+      },
+    },
   ],
 }

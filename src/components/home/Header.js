@@ -9,24 +9,12 @@ const header = (
   <h1
     style={{
       ...scale(1.25),
+      letterSpacing: '-2px',
       marginBottom: rhythm(-0.25),
       marginTop: rhythm(-0.25),
     }}
   >
-    <Link
-      style={{
-        color: 'inherit',
-        fontWeight: 400,
-        letterSpacing: '-2px',
-        backgroundImage: 'none',
-        boxShadow: 'none',
-        textDecoration: 'none',
-      }}
-      to={'/'}
-      aria-label="home"
-    >
-      Santhosh Soundararajan
-    </Link>
+    Santhosh Soundararajan
   </h1>
 )
 
