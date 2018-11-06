@@ -10,6 +10,7 @@
     "@mdx-js/loader": "^0.15.5",
     "@mdx-js/mdx": "^0.15.5",
     "@mdx-js/tag": "^0.15.0",
+    "core-js": "^2.5.7",
     "d3": "^5.5.0",
     "gatsby": "next",
     "gatsby-image": "next",
