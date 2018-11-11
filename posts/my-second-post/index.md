@@ -26,6 +26,13 @@ Some of the nugets that I would definetly apply on my upcoming visualizations ar
 3) Breaking down the D3 API into Layout calculation, DOM manipulation, Annotation and Interaction layers helps 
 in building D3 apps with frameworks like React where the DOM manipulations can be handed over to react for example.
 
+The general form of the law is
+```
+                ψ(I)=kIa,
+```
+where `I` is the magnitude of the physical stimulus, `ψ(I)` is the subjective magnitude of 
+the sensation evoked by the stimulus, a is an exponent that depends on the type of stimulation 
+and `k` is a proportionality constant that depends on the units used.
 
 The `gatsby-source-filesystem` package allows Gatsby to use GraphQL on the images in a certain directory and make queries out of them. The two `sharp` plugins are what processes the images before you display them.
 
