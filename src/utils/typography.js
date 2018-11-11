@@ -7,12 +7,16 @@ import './../styles/global.css'
 const typography = new Typography({
   baseFontSize: '16px',
   baseLineHeight: 1.5,
-  // googleFonts: [
-  //   {
-  //     name: 'Lora',
-  //     styles: ['300', '400', '400i', '700'],
-  //   },
-  // ],
+  googleFonts: [
+    {
+      name: 'PT Sans',
+      styles: ['300', '400', '400i', '700'],
+    },
+    {
+      name: 'PT Serif',
+      styles: ['300', '400', '400i', '700'],
+    },
+  ],
   headerFontFamily: ['PT Sans', 'sans-serif'],
   bodyFontFamily: ['PT Serif', 'serif'],
   headerColor: 'hsla(0,0%,0%,0.9)',
@@ -56,7 +60,7 @@ const typography = new Typography({
         marginBottom: rhythm(0.5),
       },
       h1: {
-        fontSize: '54px',
+        fontSize: '42px',
         fontWeight: 300,
         letterSpacing: '-2px',
       },

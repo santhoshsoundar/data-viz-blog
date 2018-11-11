@@ -21,7 +21,7 @@ export default function module() {
             levels: 3,				//How many levels or inner circles should there be drawn
             maxValue: 0, 			//What is the value that the biggest circle will represent
             labelFactor: 1.25, 		//How much farther than the radius of the outer circle should the labels be placed
-            wrapWidth: 60, 			//The number of pixels after which a label needs to be given a new line
+            wrapWidth: 30, 			//The number of pixels after which a label needs to be given a new line
             opacityArea: 0.35, 		//The opacity of the area of the blob
             dotRadius: 4, 			//The size of the colored circles of each blog
             opacityCircles: 0.1, 	//The opacity of the circles of each blob
@@ -63,6 +63,14 @@ export default function module() {
                     .append("g")
                     .attr("transform", "translate(" + (cfg.w / 2 + cfg.margin.left) + "," + (cfg.h / 2 + cfg.margin.top) + ")");
 
+                canvas.append('text')
+                    .text(key)
+                    .attr('id', 'title')
+                    .style('font-size', 16)
+                    .style('font-weight', 'bold')
+                    .attr('fill', '#d3d3d3')
+                    .attr('transform', 'translate(' + -radius + ',' + -radius * 1.45 + ')')
+
                 filter = canvas.append('defs').append('filter').attr('id', 'glow')
                 feGaussianBlur = filter.append('feGaussianBlur').attr('stdDeviation', '3.5').attr('result', 'coloredBlur')
                 feMerge = filter.append('feMerge')
@@ -101,6 +109,8 @@ export default function module() {
                 radarWrapper.append("g").attr("id", "radar-dot")
             }
 
+            canvas.select('#title').text(key);
+
             axisLineJoin = axisWrapper.select('#axis-lines').selectAll("line").data(selectedAxis);
             axisLineJoin.enter()
                 .append("line")
@@ -117,20 +127,40 @@ export default function module() {
                 .attr("y2", function (d, i) { return rScale(cfg.maxValue * 1.1) * Math.sin(angleSlice * i - Math.PI / 2); });
 
             axisTextJoin = axisWrapper.select('#axis-text').selectAll("text").data(selectedAxis);
+            axisTextJoin.exit().remove();
+            // axisTextJoin.transition(t)
+            //     .attr("x", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.cos(angleSlice * i - Math.PI / 2); })
+            //     .attr("y", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.sin(angleSlice * i - Math.PI / 2); })
+            //     .text(d => d)
+            //     .apply(wrap, cfg.wrapWidth)
+            // axisTextJoin.enter()
+            //     .append("text")
+            //     .style("font-size", "11px")
+            //     .attr("text-anchor", "middle")
+            //     .attr("dy", "0.35em")
+            //     .attr("x", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.cos(angleSlice * i - Math.PI / 2); })
+            //     .attr("y", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.sin(angleSlice * i - Math.PI / 2); })
+            //     .text(d => d)
+            //     .call(wrap, cfg.wrapWidth)
+
+            // axisTextJoin.transition(t)
+            //     .attr("x", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.cos(angleSlice * i - Math.PI / 2); })
+            //     .attr("y", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.sin(angleSlice * i - Math.PI / 2); })
+            //     .text(d => d)
+            //     .call(wrap, cfg.wrapWidth)
+
             axisTextJoin.enter()
                 .append("text")
-                .style("font-size", "11px")
+                .style("font-size", "10px")
+                .style("fill", "#777")
                 .attr("text-anchor", "middle")
                 .attr("dy", "0.35em")
+                .merge(axisTextJoin)
                 .attr("x", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.cos(angleSlice * i - Math.PI / 2); })
                 .attr("y", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.sin(angleSlice * i - Math.PI / 2); })
                 .text(d => d)
-                .call(wrap, cfg.wrapWidth);
-            axisTextJoin.exit().remove();
-            axisTextJoin.transition(t)
-                .attr("x", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.cos(angleSlice * i - Math.PI / 2); })
-                .attr("y", function (d, i) { return rScale(cfg.maxValue * cfg.labelFactor) * Math.sin(angleSlice * i - Math.PI / 2); })
-                .text(d => d);
+                .call(wrap, cfg.wrapWidth)
+
 
             //The radial line function
             let radarLine = d3.radialLine()
@@ -159,7 +189,6 @@ export default function module() {
                     }
                     return cfg.color(d[0][areaName]);
                 })
-
 
             radarLineStrokeJoin = radarWrapper.select('#radar-line-stroke').selectAll('path').data([keyData])
             radarLineStrokeJoin
@@ -206,7 +235,7 @@ export default function module() {
                 })
 
         });
-    }// exports end
+    }
 
     // GETTERS AND SETTERS:
     exports.w = function (_x) {
@@ -273,15 +302,13 @@ export default function module() {
     return exports;
 };
 
-
-
-
 /////////////    Utility Functions  //////////////
 
 //Wraps SVG text	
 function wrap(text, width) {
+
     text.each(function () {
-        var text = d3.select(this),
+        let text = d3.select(this),
             words = text.text().split(/\s+/).reverse(),
             word,
             line = [],
@@ -292,6 +319,7 @@ function wrap(text, width) {
             dy = parseFloat(text.attr("dy")),
             tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
 
+        console.log(words)
         while (word = words.pop()) {
             line.push(word);
             tspan.text(line.join(" "));
@@ -303,4 +331,16 @@ function wrap(text, width) {
             }
         }
     });
+}
+
+function tweenText(newValue) {
+    return function () {
+        var currentValue = +this.textContent;
+
+        var i = d3.interpolateRound(currentValue, newValue);
+
+        return function (t) {
+            this.textContent = i(t);
+        };
+    }
 }

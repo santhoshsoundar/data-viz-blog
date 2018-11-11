@@ -1,0 +1,33 @@
+---
+title: Birth of Parallel Co-ordinates
+date: "2016-07-18T22:12:03.284Z"
+---
+import ImageComponent from 'components/blog/ImgHodler'
+
+<ImageComponent queryString={'postCritique'} widthProp={700}/>
+
+ > Article titled [“The Most Detailed Maps You’ll See From the Midterm Elections”](https://www.nytimes.com/interactive/2014/11/04/upshot/senate-maps.html) @nytimes/upshot
+
+### Infograph Overview:
+
+### Why parallel coordinates:
+As we add more that 2 coordinates to any data representation we are going to face problems 
+on a perceptual standpoint, since the essential representation medium itself is a 2D.
+
+So Al Inselberg demonstrated the concept of parallel coordinates in the early 90s. Here is how it works.
+<ImageComponent queryString={'p1'} widthProp={600}/>
+
+### Nuts & Bolts:
+With parallel coordinates, we’re going to take the Cartesian coordinates. We have a horizontal x-axis 
+and a vertical y-axis, and we’re going to take these axes and we’re going to make them parallel instead 
+of orthogonal, at right angles, as they usually are.
+<ImageComponent queryString={'p1'} widthProp={600}/>
+So now the two axes are not orthogonal. They’re parallel to each other and they don’t extend from the 
+same origin. So the origin here is horizontally at the bottom and increasing x goes up this axis, 
+increasing y goes up this axis. So now I’ve got the data points, and I need to figure out where these data points occur.
+
+<ImageComponent queryString={'p3'} widthProp={600}/>
+
+We can map each point onto its corresponding position on the y-axis & its just basically dragging 
+them across horizontally, because their position in y in this chart corresponds to their height along this y-axis.
+<ImageComponent queryString={'p4'} widthProp={600}/>

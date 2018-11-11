@@ -2,192 +2,215 @@ let data = [
     {
         key: 'Big Data Management',
         values: [{
-            "skill": "A",
+            "skill": "MongoDB",
             "domain": "Big Data Management",
-            "value": 0.22
+            "value": 4
         },
         {
-            "skill": "B",
+            "skill": "Neo4J",
             "domain": "Big Data Management",
-            "value": 0.32
+            "value": 3.5
         },
         {
-            "skill": "C",
+            "skill": "CouchDB",
             "domain": "Big Data Management",
-            "value": 0.42
+            "value": 4.5
         },
         {
-            "skill": "D",
+            "skill": "Spark",
             "domain": "Big Data Management",
-            "value": 0.22
+            "value": 3.5
         },
         {
-            "skill": "E",
+            "skill": "SQL",
             "domain": "Big Data Management",
-            "value": 0.32
+            "value": 4
         },
         {
-            "skill": "F",
+            "skill": "Hadoop",
             "domain": "Big Data Management",
-            "value": 0.32
+            "value": 3
         },
         {
-            "skill": "K",
+            "skill": "Data Pipelining",
             "domain": "Big Data Management",
-            "value": 0.32
+            "value": 4
         },
         {
-            "skill": "Q",
+            "skill": "NoSQL",
             "domain": "Big Data Management",
-            "value": 0.32
+            "value": 4.5
         }]
     },
     {
         key: 'Data Mining & Analysis',
         values: [{
-            "skill": "X",
+            "skill": "Python",
             "domain": "Data Mining & Analysis",
-            "value": 0.22
+            "value": 4
         },
         {
-            "skill": "Y",
+            "skill": "Sentiment Analysis",
             "domain": "Data Mining & Analysis",
-            "value": 0.32
+            "value": 3.5
         },
         {
-            "skill": "Z",
+            "skill": "Information Retrieval",
             "domain": "Data Mining & Analysis",
-            "value": 0.42
+            "value": 4
         },
         {
-            "skill": "D",
+            "skill": "Unsupervised Learning",
             "domain": "Data Mining & Analysis",
-            "value": 0.22
+            "value": 3
         },
         {
-            "skill": "E",
+            "skill": "Data Extraction & Cleaning",
             "domain": "Data Mining & Analysis",
-            "value": 0.32
+            "value": 4.5
         },
         {
-            "skill": "F",
+            "skill": "Topic Modeling",
             "domain": "Data Mining & Analysis",
-            "value": 0.32
-        }]
+            "value": 3
+        },
+        {
+            "skill": "Graph Theory",
+            "domain": "Data Mining & Analysis",
+            "value": 3.5
+        }
+        ]
     },
     {
         key: 'Statistical Inference',
         values: [{
-            "skill": "M",
+            "skill": "Hypothesis Testing",
             "domain": "Statistical Inference",
-            "value": 0.22
+            "value": 4
         },
         {
-            "skill": "B",
+            "skill": "R",
             "domain": "Statistical Inference",
-            "value": 0.32
+            "value": 4.5
         },
         {
-            "skill": "N",
+            "skill": "Dimensionality Reduction",
             "domain": "Statistical Inference",
-            "value": 0.42
+            "value": 3.5
         },
         {
-            "skill": "D",
+            "skill": "Bayesian Inference",
             "domain": "Statistical Inference",
-            "value": 0.22
+            "value": 4
         },
         {
-            "skill": "O",
+            "skill": "Markov Chains",
             "domain": "Statistical Inference",
-            "value": 0.32
+            "value": 2
         },
         {
-            "skill": "F",
+            "skill": "Time Series Forecasting",
             "domain": "Statistical Inference",
-            "value": 0.32
+            "value": 3.5
+        },
+        {
+            "skill": "Regression",
+            "domain": "Statistical Inference",
+            "value": 4.5
         }]
     },
     {
         key: 'Frontend Engineering',
         values: [{
-            "skill": "M",
+            "skill": "React",
             "domain": "Frontend Engineering",
-            "value": 0.22
+            "value": 4
         },
         {
-            "skill": "B",
+            "skill": "Angular",
             "domain": "Frontend Engineering",
-            "value": 0.48
+            "value": 3.5
         },
         {
-            "skill": "N",
+            "skill": "Vue/Vuex",
             "domain": "Frontend Engineering",
-            "value": 0.42
+            "value": 4
         },
         {
-            "skill": "D",
+            "skill": "Node.js",
             "domain": "Frontend Engineering",
-            "value": 0.22
+            "value": 3.2
         },
         {
-            "skill": "O",
+            "skill": "Jest",
             "domain": "Frontend Engineering",
-            "value": 0.32
+            "value": 3.5
         },
         {
-            "skill": "F",
+            "skill": "CSS -Sass/ StyledComponents",
             "domain": "Frontend Engineering",
-            "value": 0.32
+            "value": 4
         },
         {
-            "skill": "6",
+            "skill": "Javascript",
             "domain": "Frontend Engineering",
-            "value": 0.32
-        }]
+            "value": 4.5
+        }
+        ]
     },
     {
         key: 'Information Visualization',
         values: [{
-            "skill": "M",
+            "skill": "D3",
             "domain": "Information Visualization",
-            "value": 0.42
+            "value": 4.7
         },
         {
-            "skill": "B",
+            "skill": "TopoJson",
             "domain": "Information Visualization",
-            "value": 0.32
+            "value": 3.5
         },
         {
-            "skill": "N",
+            "skill": "Preattentive Processing",
             "domain": "Information Visualization",
-            "value": 0.42
+            "value": 4
         },
         {
-            "skill": "X",
+            "skill": "Three.js",
             "domain": "Information Visualization",
-            "value": 0.1
+            "value": 2.5
         },
         {
-            "skill": "O",
+            "skill": "DataViz Design",
             "domain": "Information Visualization",
-            "value": 0.32
+            "value": 4.5
         },
         {
-            "skill": "Y",
+            "skill": "WebGL",
             "domain": "Information Visualization",
-            "value": 0.32
+            "value": 2
         },
         {
-            "skill": "Z",
+            "skill": "Crossfilter",
             "domain": "Information Visualization",
-            "value": 0.472
+            "value": 3.5
         },
         {
-            "skill": "H",
+            "skill": "Canvas",
             "domain": "Information Visualization",
-            "value": 0.15
-        }]
+            "value": 3
+        },
+        {
+            "skill": "SVG",
+            "domain": "Information Visualization",
+            "value": 4.25
+        },
+        {
+            "skill": "Mapbox",
+            "domain": "Information Visualization",
+            "value": 3
+        },
+        ]
     }
 ]
 

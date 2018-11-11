@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import { FiMail } from 'react-icons/fi'
 import { FaLinkedinIn, FaGithubAlt, FaTwitter } from 'react-icons/fa'
 import { rhythm, scale } from '../../utils/typography'
@@ -24,9 +23,9 @@ const LinkIcons = props => (
       display: `inline-block`,
     }}
   >
-    <Link to={props.to} className="icons" aria-label={props.ariaLabel}>
+    <a href={props.to} target={props.ariaLabel !== 'Mail' && "_blank"} className="icons" aria-label={props.ariaLabel}>
       <span style={{ marginRight: `1rem` }}>{props.children} </span>
-    </Link>
+    </a>
   </li>
 )
 
@@ -43,26 +42,27 @@ const RootHeader = () => {
         }}
       >
         {' '}
-        <LinkIcons to="/about/" ariaLabel="Mail">
+        <LinkIcons to="mailto:santhosh.fiddle@gmail.com" ariaLabel="Mail">
           <FiMail key="mail" />
         </LinkIcons>
-        <LinkIcons to="/about/" ariaLabel="LinkedIn">
+        <LinkIcons to="https://www.linkedin.com/in/santhoshsoundararajan" ariaLabel="LinkedIn">
           <FaLinkedinIn key="linkedin" />
         </LinkIcons>
-        <LinkIcons to="/about/" ariaLabel="Twitter">
+        <LinkIcons to="https://twitter.com/i/likes" ariaLabel="Twitter">
           <FaTwitter key="twitter" />
         </LinkIcons>
-        <LinkIcons to="/about/" ariaLabel="Github">
+        <LinkIcons to="https://github.com/Santhosh114" ariaLabel="Github">
           <FaGithubAlt key="git" />
         </LinkIcons>
-        <Link
-          to="/contact/"
+        <a
+          href='Resume-Santhosh-Soundararajan.pdf'
           aria-label="Resume"
           className="icons"
+          target="_blank"
           style={{ verticalAlign: 'text-bottom' }}
         >
           Resume
-        </Link>
+        </a>
       </ul>
       <p
         style={{

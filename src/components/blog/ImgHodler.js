@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
-const ImgHodler = ({ queryString }) => {
+const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -12,37 +12,56 @@ const ImgHodler = ({ queryString }) => {
               title
             }
           }
-          thumbParallel: file(relativePath: { eq: "thumb_parallel.png" }) {
+          postBayd3Pass: file(relativePath: { eq: "bayd3Pass.png" }) {
             ...cardFluidImage
           }
-          thumbPrecinct: file(relativePath: { eq: "thumb_precinct.png" }) {
+          postUberPass: file(relativePath: { eq: "uberPass.png" }) {
             ...cardFluidImage
           }
-          thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.png" }) {
+          postGoogleCampus: file(relativePath: { eq: "googleCampus.png" }) {
             ...cardFluidImage
           }
-          thumbAirportBubble: file(
-            relativePath: { eq: "thumb_airport_bubble.png" }
-          ) {
+          postCritique: file(relativePath: { eq: "critique.png" }) {
             ...cardFluidImage
           }
-          thumbPower: file(relativePath: { eq: "thumb_power_law.png" }) {
+          postParallelHead: file(relativePath: { eq: "head.png" }) {
             ...cardFluidImage
           }
-          thumbCollege: file(relativePath: { eq: "thumb_college_majors.png" }) {
+          postParallel1: file(relativePath: { eq: "p1.png" }) {
             ...cardFluidImage
           }
-          thumbNeofj: file(relativePath: { eq: "thumb_neofj.png" }) {
+          postParallel2: file(relativePath: { eq: "p2.png" }) {
+            ...cardFluidImage
+          }
+          postParallel3: file(relativePath: { eq: "p3.png" }) {
+            ...cardFluidImage
+          }
+          postParallel4: file(relativePath: { eq: "p4.png" }) {
             ...cardFluidImage
           }
         }
       `}
       render={data => {
         return (
-          <Img
-            key={data.site.siteMetadata.title}
-            fluid={data[queryString].childImageSharp.fluid}
-          />
+          <span
+            style={{
+              textAlign: 'center',
+              fontStyle: 'italic',
+              fontSize: '11px',
+              display: (displayProp) ? displayProp : {},
+              marginLeft: (mlProp) ? mlProp : {}
+            }}>
+            <Img
+              style={{
+                width: (widthProp) ? widthProp : {},
+                margin: 'auto'
+              }}
+              key={data.site.siteMetadata.title}
+              fluid={data[queryString].childImageSharp.fluid}
+            />
+            {label && <p style={{ marginTop: '5px' }}>{label}</p>}
+          </span>
+
         )
       }}
     />

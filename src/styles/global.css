@@ -12,4 +12,12 @@
     --main-eightgrey-color:#888;
     --main-ninegrey-color:#aaaaaa;
     --main-btwogrey-color:#b2b2b2;
+    --syntax_normal: #1b1e23;
+    --syntax_diff: #24292e;
+    --syntax_keyword: #c30771;
+    --syntax_atom: #10a778;
+    --syntax_string: #008ec4;
+    --syntax_error: #ffbedc;
+    --syntax_known_variable: #005f87;
+    --syntax_key: #6636b4;
 }

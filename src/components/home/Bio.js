@@ -4,7 +4,7 @@ import { FaChess, FaGraduationCap } from 'react-icons/fa'
 import { GoWatch } from 'react-icons/go'
 import { IoIosStopwatch, IoMdStopwatch } from 'react-icons/io'
 import { rhythm } from '../../utils/typography'
-import CircularFlow from '../charts/bio-circularFlow/CircularFlow'
+import CircularFlow from '../charts/bio-circular-flow/CircularFlow'
 
 let listStyle = {
   marginLeft: rhythm(2 / 3),
@@ -34,16 +34,17 @@ export default () => {
 
         <p style={{ marginBottom: -5 }}>
           I recieved a masters degree in Data Science from{' '}
-          <a href="https://www.facebook.com">
+          <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
             Indiana University <FaGraduationCap />
           </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
           with which I ended I spending most of my time facinated by visual encodings. The following is a wheel calandar inspired
           time series chart of time spent on various domains within data science until I started working full-time on data visualizations.
         </p>
         <CircularFlow />
+        <br />
         <p>
           Besides data visualization, I indulge myself in the following:
-        </p>
+      </p>
         <ul
           style={{
             marginTop: '-15px',
@@ -78,6 +79,6 @@ export default () => {
           </li>
         </ul>
       </div>
-    </section>
+    </section >
   )
 }

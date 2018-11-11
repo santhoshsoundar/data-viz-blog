@@ -4,13 +4,13 @@ import Radium from 'radium'
 import Img from 'gatsby-image'
 import './../../styles/global.css'
 import { Link, graphql } from 'gatsby'
-import { FaGithub, FaTwitter, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaTwitter, FaCodepen, FaExternalLinkAlt } from 'react-icons/fa'
 
 let cardFocus = {
-    cursor: 'pointer',
-    WebkitTransform: 'scale(1.0125)',
-    boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.2)',
-  },
+  cursor: 'pointer',
+  WebkitTransform: 'scale(1.0125)',
+  boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.2)',
+},
   cardStyles = {
     card: {
       marginBottom: 5,
@@ -51,34 +51,67 @@ let Card = props => {
         marginBottom: '2px',
       }}
     >
-      <Link
-        to={props.link}
-        style={{
-          color: 'inherit',
-          backgroundImage: 'none',
-          boxShadow: 'none',
-          textDecoration: 'none',
-        }}
-      >
-        <span style={cardStyles.title} id={props.name + 'title'}>
-          <Img key={props.name} style={cardStyles.card} fluid={props.img} />
-          {props.name}
-        </span>
-        <br />
-        <span style={cardStyles.subTitle} id={props.name + 'sub-title'}>
-          {props.company}
-        </span>
-      </Link>
+
+      {props.type == 'external' && (
+        <a
+          target="_blank"
+          href={props.link}
+          style={{
+            color: 'inherit',
+            backgroundImage: 'none',
+            boxShadow: 'none',
+            textDecoration: 'none',
+          }}
+        >
+          <span style={cardStyles.title} id={props.name + 'title'}>
+            <Img key={props.name} style={cardStyles.card} fluid={props.img} />
+            {props.name}
+          </span>
+          <br />
+          <span style={cardStyles.subTitle} id={props.name + 'sub-title'}>
+            {props.month}
+          </span>
+        </a>
+      )}
+
+      {props.type == 'local' && (
+        <Link
+          to={props.link}
+          style={{
+            color: 'inherit',
+            backgroundImage: 'none',
+            boxShadow: 'none',
+            textDecoration: 'none',
+          }}
+        >
+          <span style={cardStyles.title} id={props.name + 'title'}>
+            <Img key={props.name} style={cardStyles.card} fluid={props.img} />
+            {props.name}
+          </span>
+          <br />
+          <span style={cardStyles.subTitle} id={props.name + 'sub-title'}>
+            {props.month}
+          </span>
+        </Link>
+      )}
+
+      {props.sandbox && (
+        <a href={props.sandbox} target="_blank" className="cardIcons" aria-label={'Codepen-Menu'}>
+          <span style={cardStyles.cardIcon}>
+            <FaCodepen key={props.name} />{' '}
+          </span>
+        </a>
+      )}
 
       {props.github && (
-        <a href={props.github} className="cardIcons" aria-label={'Github-Menu'}>
+        <a href={props.github} target="_blank" className="cardIcons" aria-label={'Github-Menu'}>
           <span style={cardStyles.cardIcon}>
             <FaGithub key={props.name} />{' '}
           </span>
         </a>
       )}
       {props.tweet && (
-        <a href={props.tweet} className="cardIcons" aria-label={'Twitter-Menu'}>
+        <a href={props.tweet} target="_blank" className="cardIcons" aria-label={'Twitter-Menu'}>
           <span style={cardStyles.cardIcon}>
             <FaTwitter key={props.name} />{' '}
           </span>
@@ -89,8 +122,9 @@ let Card = props => {
           href={props.external}
           className="cardIcons"
           aria-label={'External-Menu'}
+          target="_blank"
         >
-          <span style={cardStyles.cardIcon}>
+          <span style={cardStyles.cardIcon} className="cardIcons">
             <FaExternalLinkAlt key={props.name} />{' '}
           </span>
         </a>
@@ -128,7 +162,7 @@ export default CardList
 export const pageQuery = graphql`
   fragment cardFluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 786) {
         ...GatsbyImageSharpFluid
       }
     }

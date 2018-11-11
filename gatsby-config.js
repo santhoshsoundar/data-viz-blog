@@ -1,3 +1,5 @@
+const prism = require('@mapbox/rehype-prism')
+const smartypants = require('./src/utils/remark-smartypants')
 module.exports = {
   siteMetadata: {
     title: 'Data Viz Blog',
@@ -27,11 +29,10 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          `gatsby-remark-emoji`,
         ],
+        mdPlugins: [smartypants],
+        hastPlugins: [prism]
       },
     },
     `gatsby-plugin-netlify`,
@@ -63,7 +64,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `minimal-ui`,
-        icon: `src/components/assets/favico.png`,
+        icon: `static/favico.png`,
       },
     },
     {
@@ -99,13 +100,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/components/assets/post-img/power-law`,
         name: 'postPower',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/charts/bio-circularFlow`,
-        name: 'circular',
       },
     },
   ],

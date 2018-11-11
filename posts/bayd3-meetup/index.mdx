@@ -1,0 +1,91 @@
+---
+title: 'BayD3 Meetup @Google: Semiotic.js'
+date: "2018-07-01T22:12:03.284Z"
+---
+import Tweet from 'components/blog/Tweet'
+import ImageComponent from 'components/blog/ImgHodler'
+import Violin from 'components/charts/semiotic-example/violinPlot'
+
+<ImageComponent queryString={'postGoogleCampus'} widthProp={700}  label='the irresistible google bikes'/>
+
+
+These few among the 1200+ bikes greeted me into the campus for a meetup/workshop with [@elijah_meeks](https://twitter.com/Elijah_Meeks) - 
+[Mental Models for Data Visualization](https://www.meetup.com/Bay-Area-d3-User-Group/events/252372084/). 
+
+This was a mild intraduction to Semiotic.js, a charting library written over d3 for React and that is instant Yes
+for a listen from the creator himself. Well, here is a demo Violin plot charted live with some witty comments as always from Meeks. 
+
+The Violin plot is made up of the a component initialization with chart parameters and data accessors as props which is 
+highly customisable and the modules are written for the React so this is a library that will serve well 
+complimenting d3 in a React workflow. And I like how the library integrates misellaneous chart features like 
+Legend and Axis plus the rationale behind annotation layer is brilliant - 
+[Read More](https://medium.com/@Elijah_Meeks/making-annotations-first-class-citizens-in-data-visualization-21db6383d3fe)
+<Violin />
+
+```javascript
+import React from 'react'
+import { OrdinalFrame } from "semiotic"
+import data from "./curry_points"
+import "./styles.css";
+
+const ViolinPlot = () => {
+    return (
+        <div>
+            <h4>
+                Semiotic OrdinalFrame
+            </h4>
+            <OrdinalFrame
+                size={[800, 400]}
+                data={data}
+                oAccessor="SHOT_TYPE"
+                rAccessor={d => Math.min(35, d.SHOT_DISTANCE)}
+                summaryType={{ type: "violin", bins: 12 }}
+                type={{ type: "swarm", r: 2, iterations: 250 }}
+                projection="horizontal"
+                style={d => ({
+                    fill: d.EVENT_TYPE === "Made Shot" ? "blue" : "red",
+                    stroke: "blue",
+                    opacity: 0.65
+                })}
+                summaryStyle={{ fill: "none", stroke: "#d1d1d1", strokeWidth: 2 }}
+                oPadding={5}
+                axis={{ orient: "left" }}
+                oLabel={true}
+                margin={{ left: 130, bottom: 50, top: 10, right: 10 }}
+                pieceHoverAnnotation={true}
+            />
+        </div>
+    )
+}
+
+export default ViolinPlot
+
+// data = [
+//     {
+//     PERIOD: 1,
+//     MINUTES_REMAINING: 8,
+//     SECONDS_REMAINING: 9,
+//     EVENT_TYPE: "Made Shot",
+//     ACTION_TYPE: "Jump Shot",
+//     SHOT_TYPE: "3PT Field Goal",
+//     SHOT_ZONE_BASIC: "Above the Break 3",
+//     SHOT_ZONE_RANGE: "24+ ft.",
+//     SHOT_DISTANCE: 25,
+//     LOC_X: 95,
+//     LOC_Y: 242,
+//     GAME_DATE: "20171017",
+//     opponent: "HOU",
+//     home: true
+//     },
+// .....
+// .....
+// ]
+```
+New chart types are being added frequently and is open for community contribution 🎉 
+
+<Tweet tweetId='1059830766098571264' />
+
+On the closing note, we have an entry pass comparison between Uber and Google where I see some exciting projects taking shape and their passes
+demonstrate their style of work if I may take a guess!
+<ImageComponent queryString={'postBayd3Pass'} widthProp={300} label='meetup pass @google' displayProp='inline-block' mlProp='50px'/> 
+<ImageComponent queryString={'postUberPass'} widthProp={300} label='owl signature pass @Uber ' displayProp='inline-block' mlProp='50px'/> 

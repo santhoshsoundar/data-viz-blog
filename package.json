@@ -7,6 +7,7 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
+    "@mapbox/rehype-prism": "0.3.0",
     "@mdx-js/loader": "^0.15.5",
     "@mdx-js/mdx": "^0.15.5",
     "@mdx-js/tag": "^0.15.0",
@@ -26,7 +27,6 @@
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-typography": "next",
     "gatsby-remark-copy-linked-files": "next",
-    "gatsby-remark-emoji": "0.0.2",
     "gatsby-remark-images": "next",
     "gatsby-remark-prismjs": "next",
     "gatsby-remark-responsive-iframe": "next",
@@ -36,15 +36,22 @@
     "gatsby-transformer-sharp": "next",
     "loader-utils": "^1.1.0",
     "lodash": "^4.17.5",
+    "prism-themes": "1.0.1",
     "prismjs": "^1.15.0",
     "radium": "^0.24.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.0.4",
+    "react-tweet-embed": "^1.1.1",
+    "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.13",
+    "retext": "6.0.0",
+    "retext-smartypants": "3.0.2",
+    "semiotic": "1.15.8",
     "typography": "^0.16.17",
-    "typography-breakpoint-constants": "^0.15.10"
+    "typography-breakpoint-constants": "^0.15.10",
+    "unist-util-visit": "1.4.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
