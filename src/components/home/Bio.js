@@ -25,11 +25,11 @@ export default () => {
         {' '}
         <p>
           {' '}
-          Hi. I am a data visualization engineer passionate about developing visual
+          I am a data visualization engineer passionate about developing visual
           models that exert least perceptual friction. <br />
-          Have spent most of my recent years in building data visualizations
-          tailor-made for effective storytelling.<br />
-
+          Have spent most of my recent years building data-driven products
+          tailor-made for requirements ranging from self-containing exploratory
+          analysis tools to infographics for visual storytelling.<br />
         </p>
 
         <p style={{ marginBottom: -5 }}>

@@ -4,7 +4,8 @@ import Radium from 'radium'
 import Img from 'gatsby-image'
 import './../../styles/global.css'
 import { Link, graphql } from 'gatsby'
-import { FaGithub, FaTwitter, FaCodepen, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaTwitter } from 'react-icons/fa'
+import { FiExternalLink, FiCodepen } from 'react-icons/fi'
 
 let cardFocus = {
   cursor: 'pointer',
@@ -98,7 +99,7 @@ let Card = props => {
       {props.sandbox && (
         <a href={props.sandbox} target="_blank" className="cardIcons" aria-label={'Codepen-Menu'}>
           <span style={cardStyles.cardIcon}>
-            <FaCodepen key={props.name} />{' '}
+            <FiCodepen key={props.name} />{' '}
           </span>
         </a>
       )}
@@ -125,7 +126,7 @@ let Card = props => {
           target="_blank"
         >
           <span style={cardStyles.cardIcon} className="cardIcons">
-            <FaExternalLinkAlt key={props.name} />{' '}
+            <FiExternalLink key={props.name} />{' '}
           </span>
         </a>
       )}

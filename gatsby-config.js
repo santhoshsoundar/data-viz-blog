@@ -88,19 +88,5 @@ module.exports = {
         name: 'postImages',
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/post-img/parallel`,
-        name: 'postParallel',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/post-img/power-law`,
-        name: 'postPower',
-      },
-    },
   ],
 }

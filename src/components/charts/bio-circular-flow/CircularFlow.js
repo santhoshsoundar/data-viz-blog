@@ -28,7 +28,7 @@ class CircularFlow extends React.Component {
       .text('Skills Aquired Over My Graduate Study')
       .style('font-size', 24)
       .style('font-weight', 'bold')
-      .attr('fill', '#ebebeb')
+      .attr('fill', '#e1e1e1')
       .attr('transform', 'translate(' + 380 + ',' + 35 + ')')
 
 

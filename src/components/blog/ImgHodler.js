@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
-const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp }) => {
+const ImgHodler = (props) => {
   return (
     <StaticQuery
       query={graphql`
@@ -39,6 +39,15 @@ const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp }) => {
           postParallel4: file(relativePath: { eq: "p4.png" }) {
             ...cardFluidImage
           }
+          postPowerLaw: file(relativePath: { eq: "stevens.png" }) {
+            ...cardFluidImage
+          }
+          postPL1: file(relativePath: { eq: "pl1.png" }) {
+            ...cardFluidImage
+          }
+          postPL2: file(relativePath: { eq: "pl2.png" }) {
+            ...cardFluidImage
+          }
         }
       `}
       render={data => {
@@ -48,18 +57,20 @@ const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp }) => {
               textAlign: 'center',
               fontStyle: 'italic',
               fontSize: '11px',
-              display: (displayProp) ? displayProp : {},
-              marginLeft: (mlProp) ? mlProp : {}
+              display: (props.displayProp) ? props.displayProp : {},
+              marginLeft: (props.mlProp) ? props.mlProp : {}
             }}>
             <Img
               style={{
-                width: (widthProp) ? widthProp : {},
-                margin: 'auto'
+                width: (props.widthProp) ? props.widthProp : {},
+                margin: 'auto',
+                marginBottom: (props.label) ? {} : '15px'
               }}
               key={data.site.siteMetadata.title}
-              fluid={data[queryString].childImageSharp.fluid}
+              fluid={data[props.queryString].childImageSharp.fluid}
             />
-            {label && <p style={{ marginTop: '5px' }}>{label}</p>}
+            {props.label && <p style={{ marginTop: '5px' }}>{props.label} {props.link && <a href={props.link[1]}>{props.link[0]}</a>} </p>}
+
           </span>
 
         )
