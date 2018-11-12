@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
     let image_data = [
       {
         name: 'Building Custom Visualizations with Shirley Wu',
-        month: 'July, 2018',
+        month: 'August, 2018',
         img: this.props.data.thumbShirley.childImageSharp.fluid,
         link: '/custom-viz/',
         tweet: 'https://twitter.com/Santhosh7114/status/1025276134546534400',
