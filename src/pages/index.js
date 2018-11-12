@@ -30,6 +30,13 @@ class BlogIndex extends React.Component {
         type: 'local'
       },
       {
+        name: 'Exploring Visual Perception: Power Law',
+        month: 'May 2018',
+        img: this.props.data.thumbPower.childImageSharp.fluid,
+        link: '/power-law/',
+        type: 'local'
+      },
+      {
         name: 'Live Map of SFMuni Bus Service',
         month: 'October 2017',
         img: this.props.data.thumbSf.childImageSharp.fluid,
@@ -85,16 +92,12 @@ class BlogIndex extends React.Component {
         type: 'external'
       },
       {
-        name: 'Exploring Visual Perception',
-        month: '2015',
-        img: this.props.data.thumbPower.childImageSharp.fluid,
-        type: 'local'
-      },
-      {
         name: 'College Majors Outcome Analysis',
-        month: '2015',
+        month: 'October 2015',
         img: this.props.data.thumbCollege.childImageSharp.fluid,
-        type: 'local'
+        link: 'http://www.santhoshfiddle.com/collegemajors.html',
+        external: 'http://www.santhoshfiddle.com/collegemajors.html',
+        type: 'external'
       },
     ]
 

@@ -2,11 +2,11 @@ const prism = require('@mapbox/rehype-prism')
 const smartypants = require('./src/utils/remark-smartypants')
 module.exports = {
   siteMetadata: {
-    title: 'Data Viz Blog',
+    title: "Santhosh's DataViz Blog",
     author: 'Santhosh Soundararajan',
     description:
-      'An over engineered Data Viz Blog in conjunction with Gatsby+MDX+React+GraphQL',
-    siteUrl: 'http://santhoshfiddle.com',
+      'An over engineered Data Viz Blog built in conjunction with Gatsby+MDX+React+GraphQL to host D3.js/WebGL content.',
+    siteUrl: 'santhoshsoundar.blog',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -86,20 +86,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/components/assets/post-img`,
         name: 'postImages',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/post-img/parallel`,
-        name: 'postParallel',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/post-img/power-law`,
-        name: 'postPower',
       },
     },
   ],

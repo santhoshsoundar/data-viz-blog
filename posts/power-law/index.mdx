@@ -1,0 +1,53 @@
+---
+title: Exploring Visual Perception
+date: "2018-05-08T22:12:03.284Z"
+---
+import Tweet from 'components/blog/Tweet'
+import ImageComponent from 'components/blog/ImgHodler'
+
+Information Visualization is a marriage of multiple disciplines such as Psychology, 
+Human Computer Interaction and Data Science, which again includes Computer Science, 
+and Statistics! So they’re many reasons to be intrigued by its sheer depth and this post 
+quickly gives a glimpse of Psychological aspect of Information Visualization.
+
+In terms of our visual apparatus, we’re not as good at judging differences in certain parameters 
+and NOT good at some and Stevens’ Power Law gives us a quick way to measure this phenomenon.
+
+<ImageComponent queryString={'postPowerLaw'} widthProp={600} label='power law - ' link={['image source', 'http://d.hatena.ne.jp/keiono/20110324/1301049705']} />
+
+### Stevens’ Power Law:
+The general form of the law is
+                                `ψ(I)=kIa`,
+where `I` is the magnitude of the physical stimulus, `ψ(I)` is the subjective magnitude of the 
+sensation evoked by the stimulus, a is an exponent that depends on the type of stimulation and `k` 
+is a proportionality constant that depends on the units used.
+
+Charting this out gives us an interesting array of stimulus and from the below image one can generalize 
+the stimulus exaggeration that happens with the responses below the line (Length n=1.0) namely area, 
+loudness and brightness. This means the change in these parameters (area, loudness and brightness) 
+is in some way underestimated by the human perception and the reverse is true for the upper side of the line. 
+This is why we give careful consideration while designing an infographic with colors and their brightness. 
+
+### Case: Length vs Area
+From Stevens’ Power Law we can immediately conclude that we’re not as good at judging differences area as we 
+are in length. We use length as a means to judge sizes and therefore tend to underestimate differences in areas 
+especially of the circles.
+
+For this reason, a circle that actually has 3x the area of another appears comparable because our brain is 
+relating their radii, which differ by a factor of 1.72x.Here are some more proofs of controled experiments 
+at [Stanford HCI Labs](https://hci.stanford.edu/courses/cs448b/w09/lectures/20090126-Perception.pdf)
+
+But over time this concept has come to a point where the community has lead to believe the circular shapes are
+less efficient in encoding the data:
+<Tweet tweetId='857389434756505600' />
+
+On the contrary there are advocates who make more sense to me for example, [@kennelliott](https://twitter.com/kennelliott) 
+in her presentation explains that 50% of a controled group followed the outer arc of a pie 
+chart to read the metric and only 25% followed the area & more importantly a majority of the group prefered a Pie!!
+
+<ImageComponent queryString={'postPL1'} widthProp={700} label='presentation by Kennedy Elliot - ' link={['video source', 'https://www.youtube.com/watch?v=s0J6EDvlN30']} />
+
+So perception is a subjective science that can be discussed further but I would simply take into account the following 
+simple guide to chose my design channels. 
+
+<ImageComponent queryString={'postPL2'} widthProp={600} label='presentation by Shirley Wu - ' link={['slide source', 'http://slides.com/shirleywu/deck-10#/24']} />

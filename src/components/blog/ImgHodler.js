@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
-const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp }) => {
+const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp, link }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -39,6 +39,15 @@ const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp }) => {
           postParallel4: file(relativePath: { eq: "p4.png" }) {
             ...cardFluidImage
           }
+          postPowerLaw: file(relativePath: { eq: "stevens.png" }) {
+            ...cardFluidImage
+          }
+          postPL1: file(relativePath: { eq: "pl1.png" }) {
+            ...cardFluidImage
+          }
+          postPL2: file(relativePath: { eq: "pl2.png" }) {
+            ...cardFluidImage
+          }
         }
       `}
       render={data => {
@@ -54,12 +63,14 @@ const ImgHodler = ({ queryString, widthProp, displayProp, label, mlProp }) => {
             <Img
               style={{
                 width: (widthProp) ? widthProp : {},
-                margin: 'auto'
+                margin: 'auto',
+                marginBottom: (label) ? {} : '15px'
               }}
               key={data.site.siteMetadata.title}
               fluid={data[queryString].childImageSharp.fluid}
             />
-            {label && <p style={{ marginTop: '5px' }}>{label}</p>}
+            {label && <p style={{ marginTop: '5px' }}>{label} {link && <a href={link[1]}>{link[0]}</a>} </p>}
+
           </span>
 
         )
