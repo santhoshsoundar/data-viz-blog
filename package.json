@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Santhosh Soundararajan <santhosh.fiddle@gmail.com>",
   "dependencies": {
+    "@mapbox/rehype-prism": "^0.3.0",
     "@mdx-js/loader": "^0.15.5",
     "@mdx-js/mdx": "^0.15.5",
     "@mdx-js/tag": "^0.15.0",
@@ -30,9 +31,10 @@
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
-    "@mapbox/rehype-prism": "0.3.0",
+    "hast-util-to-string": "^1.0.1",
     "loader-utils": "^1.1.0",
     "lodash": "^4.17.5",
+    "preact-cli": "^2.2.1",
     "prism-themes": "1.0.1",
     "prismjs": "^1.15.0",
     "radium": "^0.24.1",
@@ -43,14 +45,13 @@
     "react-tweet-embed": "^1.1.1",
     "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.13",
-    "semiotic": "1.15.8",
-    "typography": "^0.16.17",
-    "typography-breakpoint-constants": "^0.15.10",
     "refractor": "^2.6.1",
     "retext": "6.0.0",
     "retext-smartypants": "3.0.2",
-    "unist-util-visit": "1.4.0",
-    "hast-util-to-string": "^1.0.1"
+    "semiotic": "1.15.8",
+    "typography": "^0.16.17",
+    "typography-breakpoint-constants": "^0.15.10",
+    "unist-util-visit": "1.4.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
