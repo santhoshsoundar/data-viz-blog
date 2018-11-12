@@ -4,6 +4,8 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope')
 
+GLOBAL.self = GLOBAL
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -83,6 +85,11 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      // plugins: [
+      //   plugins.define({
+      //     self: stage === `build-javascript` || stage === `build-html`,
+      //   }),
+      // ],
     },
   })
 }

@@ -4,10 +4,8 @@ date: "2018-07-01T22:12:03.284Z"
 ---
 import Tweet from 'components/blog/Tweet'
 import ImageComponent from 'components/blog/ImgHodler'
-import Violin from 'components/charts/semiotic-example/violinPlot'
 
 <ImageComponent queryString={'postGoogleCampus'} widthProp={700}  label='the irresistible google bikes'/>
-
 
 These few among the 1200+ bikes greeted me into the campus for a meetup/workshop with [@elijah_meeks](https://twitter.com/Elijah_Meeks) - 
 [Mental Models for Data Visualization](https://www.meetup.com/Bay-Area-d3-User-Group/events/252372084/). 
@@ -20,7 +18,8 @@ highly customisable and the modules are written for the React so this is a libra
 complimenting d3 in a React workflow. And I like how the library integrates misellaneous chart features like 
 Legend and Axis plus the rationale behind annotation layer is brilliant - 
 [Read More](https://medium.com/@Elijah_Meeks/making-annotations-first-class-citizens-in-data-visualization-21db6383d3fe)
-<Violin />
+
+<ImageComponent queryString={'postViolin'} widthProp={700}  label='violin plot made with semiotic, production build of this page failed due to this' link={['issue','https://github.com/emeeks/semiotic/issues/336']}/>
 
 ```javascript
 import React from 'react'
@@ -59,27 +58,28 @@ const ViolinPlot = () => {
 }
 
 export default ViolinPlot
-
-// data = [
-//     {
-//     PERIOD: 1,
-//     MINUTES_REMAINING: 8,
-//     SECONDS_REMAINING: 9,
-//     EVENT_TYPE: "Made Shot",
-//     ACTION_TYPE: "Jump Shot",
-//     SHOT_TYPE: "3PT Field Goal",
-//     SHOT_ZONE_BASIC: "Above the Break 3",
-//     SHOT_ZONE_RANGE: "24+ ft.",
-//     SHOT_DISTANCE: 25,
-//     LOC_X: 95,
-//     LOC_Y: 242,
-//     GAME_DATE: "20171017",
-//     opponent: "HOU",
-//     home: true
-//     },
-// .....
-// .....
-// ]
+```
+```javascript
+data = [
+     {
+     PERIOD: 1,
+     MINUTES_REMAINING: 8,
+     SECONDS_REMAINING: 9,
+     EVENT_TYPE: "Made Shot",
+     ACTION_TYPE: "Jump Shot",
+     SHOT_TYPE: "3PT Field Goal",
+     SHOT_ZONE_BASIC: "Above the Break 3",
+     SHOT_ZONE_RANGE: "24+ ft.",
+     SHOT_DISTANCE: 25,
+     LOC_X: 95,
+     LOC_Y: 242,
+     GAME_DATE: "20171017",
+     opponent: "HOU",
+     home: true
+     },
+     .....
+     .....
+]
 ```
 New chart types are being added frequently and is open for community contribution 🎉 
 

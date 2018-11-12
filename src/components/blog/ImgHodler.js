@@ -21,6 +21,9 @@ const ImgHodler = (props) => {
           postGoogleCampus: file(relativePath: { eq: "googleCampus.png" }) {
             ...cardFluidImage
           }
+          postViolin: file(relativePath: { eq: "violin.png" }) {
+            ...cardFluidImage
+          }
           postCritique: file(relativePath: { eq: "critique.png" }) {
             ...cardFluidImage
           }
