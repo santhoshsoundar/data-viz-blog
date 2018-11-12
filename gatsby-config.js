@@ -1,5 +1,7 @@
-const prism = require('@mapbox/rehype-prism')
-const smartypants = require('./src/utils/remark-smartypants')
+// const prism = require('@mapbox/rehype-prism')
+import * as prism from '@mapbox/rehype-prism'
+import * as smartypants from './src/utils/remark-smartypants'
+// const smartypants = require('./src/utils/remark-smartypants')
 module.exports = {
   siteMetadata: {
     title: "Santhosh's DataViz Blog",
