@@ -1,3 +1,5 @@
+const prism = require('@mapbox/rehype-prism')
+const smartypants = require('./src/utils/remark-smartypants')
 module.exports = {
   siteMetadata: {
     title: 'Data Viz Blog',
@@ -27,10 +29,10 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
         ],
+        mdPlugins: [smartypants],
+        hastPlugins: [prism]
       },
     },
     `gatsby-plugin-netlify`,
@@ -41,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-129221263-1`,
       },
     },
     // `gatsby-plugin-feed`,
@@ -62,7 +64,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `minimal-ui`,
-        icon: `src/components/assets/favico.png`,
+        icon: `static/favico.png`,
       },
     },
     {
@@ -84,20 +86,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/components/assets/post-img`,
         name: 'postImages',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/post-img/parallel`,
-        name: 'postParallel',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/post-img/power-law`,
-        name: 'postPower',
       },
     },
   ],

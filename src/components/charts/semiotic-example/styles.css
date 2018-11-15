@@ -1,0 +1,53 @@
+.tooltip-content {
+  background: white;
+  border: 1px solid #999;
+  color: black;
+  padding: 10px;
+  z-index: 999999;
+  min-width: 120px;
+}
+
+.tooltip-content:before {
+  background: inherit;
+  content: "";
+  padding: 0px;
+  transform: rotate(45deg);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  z-index: 99;
+}
+
+.annotation-or-label.horizontal .tooltip-content {
+  transform: translate(0, -50%);
+  position: relative;
+  left: 20px;
+}
+
+.annotation-or-label.horizontal .tooltip-content:before {
+  top: calc(50% - 9px);
+  left: -9px;
+  border-left: inherit;
+  border-bottom: inherit;
+}
+
+.annotation-or-label.vertical .tooltip-content {
+  position: relative;
+  transform: translate(-50%, calc(-100% - 20px));
+}
+
+.annotation-or-label.vertical .tooltip-content:before {
+  bottom: -10px;
+  left: calc(50% - 9px);
+  border-right: inherit;
+  border-bottom: inherit;
+}
+
+circle.frame-hover {
+  fill: none;
+  stroke: gray;
+}
+
+.axis path {
+  stroke: #ddd;
+}

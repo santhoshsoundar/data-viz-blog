@@ -1,6 +1,7 @@
 import React from 'react'
-import IndexHeader from './IndexHeader'
+import IndexHeader from './home/Header'
 import { rhythm } from '../utils/typography'
+import '../styles/prism-theme.css'
 
 class Template extends React.Component {
   render() {
