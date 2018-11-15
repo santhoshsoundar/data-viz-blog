@@ -2,94 +2,102 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-
-import Bio from '../components/Bio'
 import Layout from '../components/layout'
-import Quote from '../components/Quote'
-import Card from '../components/Card'
-import Intro from '../components/Intro'
+import Quote from '../components/home/Quote'
+import Card from '../components/home/Card'
+import Bio from '../components/home/Bio'
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const posts = get(this, 'props.data.allMdx.edges')
     let image_data = [
       {
-        name: 'A Day with Shirley Wu',
-        company: '2018',
+        name: 'Building Custom Visualizations with Shirley Wu',
+        month: 'August, 2018',
         img: this.props.data.thumbShirley.childImageSharp.fluid,
-        link: '/hello-world/',
+        link: '/custom-viz/',
+        tweet: 'https://twitter.com/Santhosh7114/status/1025276134546534400',
+        type: 'local'
       },
       {
-        name: 'BayD3 meetup @Google: Semiotic.js',
-        company: '2018',
-        img: this.props.data.thumbSemiotic.childImageSharp.fluid,
+        name: 'BayD3 Meetup @Google: Semiotic.js',
+        month: ' July, 2018',
+        img: this.props.data.thumbGoogle.childImageSharp.fluid,
+        link: '/bayd3-meetup/',
+        tweet: 'https://twitter.com/Elijah_Meeks/status/1019700407231176705',
+        sandbox: 'https://codesandbox.io/s/z650jv812x',
+        type: 'local'
       },
       {
-        name: 'Kepler Map',
-        company: '2018',
-        img: this.props.data.thumbKepler.childImageSharp.fluid,
+        name: 'Exploring Visual Perception: Power Law',
+        month: 'May 2018',
+        img: this.props.data.thumbPower.childImageSharp.fluid,
+        link: '/power-law/',
+        type: 'local'
       },
-      {
-        name: 'Reusable Module In Action',
-        company: '2018',
-        img: this.props.data.thumbReusable.childImageSharp.fluid,
-      },
-
       {
         name: 'Live Map of SFMuni Bus Service',
-        company: '2017',
+        month: 'October 2017',
         img: this.props.data.thumbSf.childImageSharp.fluid,
+        github: 'https://github.com/Santhosh114/SFO-transit-mapViz',
+        link: 'http://serene-temple-42286.herokuapp.com/',
+        external: 'http://serene-temple-42286.herokuapp.com/',
+        type: 'external'
       },
       {
-        name: 'Dashboard with Crossfilter & DC',
-        company: '2017',
+        name: 'Equinix Data Viz Challenge - DC Dashboard',
+        month: 'September 2017',
         img: this.props.data.thumbMagneto.childImageSharp.fluid,
+        link: 'http://www.santhoshfiddle.com/equinixChallenge.html',
+        external: 'http://www.santhoshfiddle.com/equinixChallenge.html',
+        type: 'external'
       },
       {
-        name: 'Critique of Expenditure Dashboard',
-        company: '2017',
+        name: 'Expenditure Dashboard with its Critique',
+        month: 'August 2017',
         img: this.props.data.thumbExp.childImageSharp.fluid,
+        link: 'http://www.santhoshfiddle.com/expdashboard.html',
+        external: 'http://www.santhoshfiddle.com/expdashboard.html',
+        type: 'external'
       },
       {
         name: 'Chernoff Faces',
-        company: '2016',
+        month: 'August 2016',
         img: this.props.data.thumbFaces.childImageSharp.fluid,
+        link: 'http://www.santhoshfiddle.com/chernoff.html',
+        external: 'http://www.santhoshfiddle.com/chernoff.html',
+        type: 'external'
       },
       {
         name: 'Birth of Parallel Co-ordinates',
-        company: '2016',
+        month: 'July 2016',
         img: this.props.data.thumbParallel.childImageSharp.fluid,
+        link: '/parallel-coordinates/',
+        type: 'local'
       },
       {
         name: 'Critique of Precinct Level Map',
-        company: '2016',
+        month: 'September 2015',
         img: this.props.data.thumbPrecinct.childImageSharp.fluid,
+        link: '/precinct-critique/',
+        type: 'local'
       },
       {
         name: 'Airport Evolution - Temporal Viz with Animation',
-        company: '2015',
+        month: 'November 2015',
         img: this.props.data.thumbAirportBar.childImageSharp.fluid,
-      },
-      {
-        name: 'Bubble version of Airport Evolution',
-        company: '2015',
-        img: this.props.data.thumbAirportBubble.childImageSharp.fluid,
-      },
-      {
-        name: 'Exploring Visual Perception',
-        company: '2015',
-        img: this.props.data.thumbPower.childImageSharp.fluid,
+        link: 'http://www.santhoshfiddle.com/airport.html',
+        external: 'http://www.santhoshfiddle.com/airport.html',
+        type: 'external'
       },
       {
         name: 'College Majors Outcome Analysis',
-        company: '2015',
+        month: 'October 2015',
         img: this.props.data.thumbCollege.childImageSharp.fluid,
-      },
-      {
-        name: 'Neo4j Friends Map',
-        company: '2015',
-        img: this.props.data.thumbNeofj.childImageSharp.fluid,
+        link: 'http://www.santhoshfiddle.com/collegemajors.html',
+        external: 'http://www.santhoshfiddle.com/collegemajors.html',
+        type: 'external'
       },
     ]
 
@@ -101,32 +109,14 @@ class BlogIndex extends React.Component {
         <Helmet
           title={siteTitle}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'DavaViz Blog' },
+            { name: 'keywords', content: 'D3.js DataViz' },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        {/* <Intro /> */}
+        <Bio />
         <Card image_info={image_data} />
-        {/* {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })} */}
         <Quote />
       </Layout>
     )
@@ -142,7 +132,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
@@ -156,112 +146,70 @@ export const pageQuery = graphql`
         }
       }
     }
-    thumbShirley: file(relativePath: { eq: "thumb_shirley.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbShirley: file(relativePath: { eq: "thumb_shirley.png" }) {
+      ...cardFluidImage
     }
-    thumbSemiotic: file(relativePath: { eq: "thumb_semiotic.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbGoogle: file(relativePath: { eq: "thumb_bayd3Google.png" }) {
+      ...cardFluidImage
     }
-    thumbKepler: file(relativePath: { eq: "thumb_kepler.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbSf: file(relativePath: { eq: "thumb_sf_muni.png" }) {
+      ...cardFluidImage
     }
-    thumbReusable: file(relativePath: { eq: "thumb_reusable.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbMagneto: file(relativePath: { eq: "thumb_magneto.png" }) {
+      ...cardFluidImage
     }
-    thumbSf: file(relativePath: { eq: "thumb_sf_muni.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.png" }) {
+      ...cardFluidImage
     }
-    thumbMagneto: file(relativePath: { eq: "thumb_magneto.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbFaces: file(relativePath: { eq: "thumb_faces.png" }) {
+      ...cardFluidImage
     }
-    thumbExp: file(relativePath: { eq: "thumb_exp_dashboard.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbParallel: file(relativePath: { eq: "thumb_parallel.png" }) {
+      ...cardFluidImage
     }
-    thumbFaces: file(relativePath: { eq: "thumb_faces.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbPrecinct: file(relativePath: { eq: "thumb_precinct.png" }) {
+      ...cardFluidImage
     }
-    thumbParallel: file(relativePath: { eq: "thumb_parallel.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.png" }) {
+      ...cardFluidImage
     }
-    thumbPrecinct: file(relativePath: { eq: "thumb_precinct.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbPower: file(relativePath: { eq: "thumb_power_law.png" }) {
+      ...cardFluidImage
     }
-    thumbAirportBar: file(relativePath: { eq: "thumb_airport_bar.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    thumbAirportBubble: file(
-      relativePath: { eq: "thumb_airport_bubble.webp" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    thumbPower: file(relativePath: { eq: "thumb_power_law.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    thumbCollege: file(relativePath: { eq: "thumb_college_majors.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    thumbNeofj: file(relativePath: { eq: "thumb_neofj.webp" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    thumbCollege: file(relativePath: { eq: "thumb_college_majors.png" }) {
+      ...cardFluidImage
     }
   }
 `
+
+
+
+
+
+
+// Upcoming posts
+
+// {
+//   name: 'Kepler Map',
+//   month: 'August, 2018',
+//   img: this.props.data.thumbKepler.childImageSharp.fluid,
+//   link: '/hi-folks/',
+//   github: 'http://www.github.com',
+//   type: 'local'
+// },
+
+// thumbKepler: file(relativePath: { eq: "thumb_kepler.png" }) {
+//   ...cardFluidImage
+// }
+
+
+// {
+//   name: 'Reusable Module In Action',
+//   month: '2018',
+//   img: this.props.data.thumbReusable.childImageSharp.fluid,
+//   type: 'local'
+// },
+
+// thumbReusable: file(relativePath: { eq: "thumb_reusable.png" }) {
+//   ...cardFluidImage
+// }

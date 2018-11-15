@@ -1,27 +1,26 @@
+const prism = require('@mapbox/rehype-prism')
+const smartypants = require('./src/utils/remark-smartypants')
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Data Viz Blog',
+    author: 'Santhosh Soundararajan',
+    description:
+      'An over engineered Data Viz Blog in conjunction with Gatsby+MDX+React+GraphQL',
+    siteUrl: 'http://santhoshfiddle.com',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-mdx`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
+        root: __dirname,
+        extensions: ['.md', '.mdx'],
         plugins: [
           {
             resolve: `gatsby-remark-images`,
-            options: {
+            pluginOptions: {
               maxWidth: 590,
+              sizeByPixelDensity: true,
             },
           },
           {
@@ -30,17 +29,10 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
         ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/components/assets/images`,
-        name: 'menu-images',
+        mdPlugins: [smartypants],
+        hastPlugins: [prism]
       },
     },
     `gatsby-plugin-netlify`,
@@ -51,10 +43,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-129221263-1`,
       },
     },
-    `gatsby-plugin-feed`,
+    // `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
@@ -66,13 +58,34 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Data Viz Blog`,
+        short_name: `DataVizBlog`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `minimal-ui`,
-        icon: `src/components/assets/profile-image.jpg`,
+        icon: `static/favico.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/posts`,
+        name: 'posts',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/components/assets/card-img`,
+        name: 'cardImages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/components/assets/post-img`,
+        name: 'postImages',
       },
     },
   ],

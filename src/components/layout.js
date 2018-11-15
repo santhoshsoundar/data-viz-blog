@@ -1,6 +1,7 @@
 import React from 'react'
-import RootHeader from './RootHeader'
+import IndexHeader from './home/Header'
 import { rhythm } from '../utils/typography'
+import '../styles/prism-theme.css'
 
 class Template extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class Template extends React.Component {
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
-          <RootHeader />
+          <IndexHeader />
           {children}
         </div>
       )

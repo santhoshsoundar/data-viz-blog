@@ -2,6 +2,9 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope')
+
+GLOBAL.self = GLOBAL
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -12,12 +15,15 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(
+            allMdx(
               sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
             ) {
               edges {
                 node {
+                  code {
+                    scope
+                  }
                   fields {
                     slug
                   }
@@ -36,7 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges
+        const posts = result.data.allMdx.edges
 
         _.each(posts, (post, index) => {
           const previous =
@@ -45,7 +51,11 @@ exports.createPages = ({ graphql, actions }) => {
 
           createPage({
             path: post.node.fields.slug,
-            component: blogPost,
+            component: componentWithMDXScope(
+              blogPost,
+              post.node.code.scope,
+              __dirname
+            ),
             context: {
               slug: post.node.fields.slug,
               previous,
@@ -61,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
@@ -69,4 +79,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+}
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      // plugins: [
+      //   plugins.define({
+      //     self: stage === `build-javascript` || stage === `build-html`,
+      //   }),
+      // ],
+    },
+  })
 }
