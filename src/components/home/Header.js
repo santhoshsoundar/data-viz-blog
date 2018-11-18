@@ -42,10 +42,23 @@ let RootHeader = () => {
             float: `right`,
             display: 'block',
             fontFamily: 'PT Sans',
+            margin: '10px 0px 0 5px',
             '@media (max-width: 800px)': {
               float: `left`,
               margin: '10px 300px 0 5px'
-            }
+            },
+            '@media (max-width: 512px)': {
+              float: `left`,
+              margin: '10px 0px 0 5px'
+            },
+            '@media (max-width: 480px)': {
+              float: `left`,
+              margin: '10px 200px 0 5px'
+            },
+            '@media (max-width: 440px)': {
+              float: `left`,
+              margin: '10px 0px 0 5px'
+            },
           }}
         >
           {' '}
