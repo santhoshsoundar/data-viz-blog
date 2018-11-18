@@ -16,9 +16,9 @@ let cardFocus = {
     card: {
       marginBottom: 5,
       WebkitTransition: 'all .3s ease-in-out',
+      boxShadow: '0.25px 0 0.5px 0.75px rgba(0, 0, 0, 0.0825)',
       // ':hover': cardFocus,
       // ':focus': cardFocus,
-      boxShadow: '0.25px 0 0.5px 0.75px rgba(0, 0, 0, 0.0825)',
     },
     title: {
       fontSize: '12.5px',
