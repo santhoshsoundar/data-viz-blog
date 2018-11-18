@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
         type: 'local'
       },
       {
-        name: 'BayD3 Meetup @Google: Semiotic.js',
+        name: 'BayD3 Meetup @Google',
         month: ' July, 2018',
         img: this.props.data.thumbGoogle.childImageSharp.fluid,
         link: '/bayd3-meetup/',
@@ -46,7 +46,7 @@ class BlogIndex extends React.Component {
         type: 'external'
       },
       {
-        name: 'Equinix Data Viz Challenge - DC Dashboard',
+        name: 'Equinix Data Viz Challenge - DC.js',
         month: 'September 2017',
         img: this.props.data.thumbMagneto.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/equinixChallenge.html',
@@ -54,7 +54,7 @@ class BlogIndex extends React.Component {
         type: 'external'
       },
       {
-        name: 'Expenditure Dashboard with its Critique',
+        name: 'Expenditure Dashboard with Critique',
         month: 'August 2017',
         img: this.props.data.thumbExp.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/expdashboard.html',

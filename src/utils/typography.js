@@ -28,7 +28,7 @@ const typography = new Typography({
     const linkColor = 'var(--main-mcnuttblue-color)'
     const vr = verticalRhythm({
       baseFontSize: '16px',
-      baseLineHeight: '26.85px',
+      baseLineHeight: '24px',
     })
     return {
       a: {
@@ -97,6 +97,8 @@ const typography = new Typography({
       [MOBILE_MEDIA_QUERY]: {
         html: {
           ...vr.establishBaseline(),
+          fontSize: `${14 / 16 * 100}%`,
+          lineHeight: 1.5,
         },
         blockquote: {
           borderLeft: `${rhythm(3 / 16)} solid ${linkColor}`,

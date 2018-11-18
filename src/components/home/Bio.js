@@ -1,20 +1,25 @@
 import React from 'react'
+import Radium, { StyleRoot } from 'radium'
 import './../../styles/global.css'
 import { FaChess, FaGraduationCap } from 'react-icons/fa'
 import { GoWatch } from 'react-icons/go'
-import { IoIosStopwatch, IoMdStopwatch } from 'react-icons/io'
+import { IoMdStopwatch } from 'react-icons/io'
 import { rhythm } from '../../utils/typography'
 import CircularFlow from '../charts/bio-circular-flow/CircularFlow'
 
-let listStyle = {
+var styles = {
   marginLeft: rhythm(2 / 3),
-  lineHeight: 0.9,
+  lineHeight: 0.7,
+
+  '@media (max-width: 800px)': {
+    lineHeight: 1.2,
+  },
 }
 
-export default () => {
+let bio = () => {
   return (
     <section>
-      <h3 style={{ fontWeight: 300, letterSpacing: '-1px' }}> Bio </h3>
+      <h3 style={{ fontWeight: 300, letterSpacing: '-1px', marginTop: '1.5rem' }}> Bio </h3>
 
       <div
         style={{
@@ -44,41 +49,47 @@ export default () => {
         <br />
         <p>
           Besides data visualization, I indulge myself in the following:
-      </p>
-        <ul
-          style={{
-            marginTop: '-15px',
-            marginBottom: '10px',
-            marginLeft: '20px',
-          }}
-        >
-          <li style={listStyle}>
-            {' '}
-            Aquascaping full/semi-planted fresh water tanks & keeping schooling
-            fishes
-          </li>
-          <li style={listStyle}>
-            {' '}
-            Exploring the intricacies of horology, specifically automatic
-            movements{' '}
-            <span
-              style={{
-                color: '#777',
-              }}
-            >
-              <GoWatch />
-              <IoMdStopwatch />
-            </span>
-          </li>
-          <li style={listStyle}>
-            {' '}
-            Playing chess, mostly Blits & Bullet. Feel free to challenge me at{' '}
-            <a href="https://www.chess.com/member/santhoshsoundar">
-              Chess.com <FaChess />
-            </a>{' '}
-          </li>
-        </ul>
+        </p>
+        <StyleRoot>
+          <ul
+            style={{
+              marginTop: '-15px',
+              marginBottom: '10px',
+              marginLeft: '20px',
+            }}
+          >
+            <li style={styles}>
+              {' '}
+              Aquascaping full/semi-planted fresh water tanks & keeping schooling
+              fishes
+            </li>
+            <li style={styles}>
+              {' '}
+              Exploring the intricacies of horology, specifically automatic
+              movements{' '}
+              <span
+                style={{
+                  color: '#777',
+                }}
+              >
+                <GoWatch />
+                <IoMdStopwatch />
+              </span>
+            </li>
+            <li style={styles}>
+              {' '}
+              Playing chess, mostly Blits & Bullet. Feel free to challenge me at{' '}
+              <a href="https://www.chess.com/member/santhoshsoundar">
+                Chess.com <FaChess />
+              </a>{' '}
+            </li>
+          </ul>
+        </StyleRoot>
       </div>
     </section >
   )
 }
+
+bio = Radium(bio)
+
+export default bio
