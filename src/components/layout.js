@@ -3,6 +3,16 @@ import IndexHeader from './home/Header'
 import { rhythm } from '../utils/typography'
 import '../styles/prism-theme.css'
 
+let WebFont
+if (typeof window !== 'undefined') {
+  WebFont = require('webfontloader')
+  WebFont.load({
+    google: {
+      families: ['PT Sans:400,400i,700', 'PT Serif:400,400i']
+    }
+  });
+}
+
 class Template extends React.Component {
   render() {
     const { location, children } = this.props

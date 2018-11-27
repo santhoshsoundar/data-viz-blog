@@ -194,24 +194,24 @@ class CircularFlow extends React.Component {
       feMergeNode_2 = feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 
     legend.append("circle")
-      .attr('id', d => d.replace(/[^A-Z0-9]/ig, "_"))
+      .attr('id', d => "circle" + d.replace(/[^A-Z0-9]/ig, "_"))
       .attr("r", 7)
       .attr("fill", z)
 
     legend
       .append('text')
-      .attr('id', d => d.replace(/[^A-Z0-9]/ig, "_"))
+      .attr('id', d => "text" + d.replace(/[^A-Z0-9]/ig, "_"))
       .attr('x', 12)
       .attr('dy', '0.35em')
       .text(d => d)
       .style('cursor', 'pointer')
       .on('mouseover', d => {
-        d3.select('text#' + d.replace(/[^A-Z0-9]/ig, "_")).transition().attr('x', 14).style('font-weight', "bold")
-        d3.select('circle#' + d.replace(/[^A-Z0-9]/ig, "_")).transition().style("filter", "url(#glowLegend)")
+        d3.select('#text' + d.replace(/[^A-Z0-9]/ig, "_")).transition().attr('x', 14).style('font-weight', "bold")
+        d3.select('#circle' + d.replace(/[^A-Z0-9]/ig, "_")).transition().style("filter", "url(#glowLegend)")
       })
       .on('mouseout', d => {
-        d3.select('text#' + d.replace(/[^A-Z0-9]/ig, "_")).transition().attr('x', 12).style('font-weight', "normal")
-        d3.select('circle#' + d.replace(/[^A-Z0-9]/ig, "_")).transition().style("filter", "")
+        d3.select('#text' + d.replace(/[^A-Z0-9]/ig, "_")).transition().attr('x', 12).style('font-weight', "normal")
+        d3.select('#circle' + d.replace(/[^A-Z0-9]/ig, "_")).transition().style("filter", "")
       })
       .on('click', d => {
         svg.select('#radar-chart')
