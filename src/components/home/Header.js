@@ -25,7 +25,7 @@ const LinkIcons = props => (
       marginBottom: 0,
     }}
   >
-    <a href={props.to} target={props.ariaLabel !== 'Mail' && "_blank"} className="icons" aria-label={props.ariaLabel}>
+    <a href={props.to} rel="noopener" target={props.ariaLabel !== 'Mail' && "_blank"} className="icons" aria-label={props.ariaLabel}>
       <span style={{ marginRight: `1rem` }}>{props.children} </span>
     </a>
   </li>

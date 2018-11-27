@@ -56,6 +56,7 @@ let Card = props => {
       {props.type == 'external' && (
         <a
           target="_blank"
+          rel="noopener"
           href={props.link}
           style={{
             color: 'inherit',
@@ -97,7 +98,7 @@ let Card = props => {
       )}
 
       {props.sandbox && (
-        <a href={props.sandbox} target="_blank" className="cardIcons" aria-label={'Codepen-Menu'}>
+        <a href={props.sandbox} target="_blank" rel="noopener" className="cardIcons" aria-label={'Codepen-Menu'}>
           <span style={cardStyles.cardIcon}>
             <FiCodepen key={props.name} />{' '}
           </span>
@@ -105,14 +106,14 @@ let Card = props => {
       )}
 
       {props.github && (
-        <a href={props.github} target="_blank" className="cardIcons" aria-label={'Github-Menu'}>
+        <a href={props.github} target="_blank" rel="noopener" className="cardIcons" aria-label={'Github-Menu'}>
           <span style={cardStyles.cardIcon}>
             <FaGithub key={props.name} />{' '}
           </span>
         </a>
       )}
       {props.tweet && (
-        <a href={props.tweet} target="_blank" className="cardIcons" aria-label={'Twitter-Menu'}>
+        <a href={props.tweet} target="_blank" rel="noopener" className="cardIcons" aria-label={'Twitter-Menu'}>
           <span style={cardStyles.cardIcon}>
             <FaTwitter key={props.name} />{' '}
           </span>
@@ -124,6 +125,7 @@ let Card = props => {
           className="cardIcons"
           aria-label={'External-Menu'}
           target="_blank"
+          rel="noopener"
         >
           <span style={cardStyles.cardIcon} className="cardIcons">
             <FiExternalLink key={props.name} />{' '}
