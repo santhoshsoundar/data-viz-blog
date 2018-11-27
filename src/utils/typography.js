@@ -12,6 +12,16 @@ if (typeof document !== "undefined") {
 const typography = new Typography({
   baseFontSize: '16px',
   baseLineHeight: 1.5,
+  googleFonts: [
+    {
+      name: 'PT Sans',
+      styles: ['300', '400', '400i', '700'],
+    },
+    {
+      name: 'PT Serif',
+      styles: ['300', '400', '400i', '700'],
+    },
+  ],
   headerFontFamily: ['PT Sans', 'sans-serif'],
   bodyFontFamily: ['PT Serif', 'serif'],
   headerColor: 'hsla(0,0%,0%,0.9)',
