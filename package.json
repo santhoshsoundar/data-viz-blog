@@ -52,8 +52,7 @@
     "semiotic": "1.15.8",
     "typography": "^0.16.17",
     "typography-breakpoint-constants": "^0.15.10",
-    "unist-util-visit": "1.4.0",
-    "webfontloader": "^1.6.28"
+    "unist-util-visit": "1.4.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
