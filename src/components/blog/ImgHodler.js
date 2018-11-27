@@ -65,7 +65,8 @@ const ImgHodler = (props) => {
             }}>
             <Img
               style={{
-                width: (props.widthProp) ? props.widthProp : {},
+                width: (props.fixWidth) ? props.fixWidth : {},
+                maxWidth: (props.widthProp) ? props.widthProp : {},
                 margin: 'auto',
                 marginBottom: (props.label) ? {} : '15px'
               }}
