@@ -25,7 +25,7 @@ const LinkIcons = props => (
       marginBottom: 0,
     }}
   >
-    <a href={props.to} target={props.ariaLabel !== 'Mail' && "_blank"} className="icons" aria-label={props.ariaLabel}>
+    <a href={props.to} rel="noopener" target={props.ariaLabel !== 'Mail' && "_blank"} className="icons" aria-label={props.ariaLabel}>
       <span style={{ marginRight: `1rem` }}>{props.children} </span>
     </a>
   </li>
@@ -42,10 +42,23 @@ let RootHeader = () => {
             float: `right`,
             display: 'block',
             fontFamily: 'PT Sans',
+            margin: '10px 0px 0 5px',
             '@media (max-width: 800px)': {
               float: `left`,
               margin: '10px 300px 0 5px'
-            }
+            },
+            '@media (max-width: 512px)': {
+              float: `left`,
+              margin: '10px 0px 0 5px'
+            },
+            '@media (max-width: 480px)': {
+              float: `left`,
+              margin: '10px 200px 0 5px'
+            },
+            '@media (max-width: 440px)': {
+              float: `left`,
+              margin: '10px 0px 0 5px'
+            },
           }}
         >
           {' '}

@@ -1,8 +1,13 @@
 import Typography from 'typography'
 import gray from 'gray-percentage'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { MOBILE_MEDIA_QUERY, TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import verticalRhythm from 'compass-vertical-rhythm'
 import './../styles/global.css'
+
+let windowWidth = 1080
+if (typeof document !== "undefined") {
+  windowWidth = document.documentElement.clientWidth
+}
 
 const typography = new Typography({
   baseFontSize: '16px',
@@ -10,11 +15,11 @@ const typography = new Typography({
   googleFonts: [
     {
       name: 'PT Sans',
-      styles: ['300', '400', '400i', '700'],
+      styles: ['300', '400', '400i'],
     },
     {
       name: 'PT Serif',
-      styles: ['300', '400', '400i', '700'],
+      styles: ['400', '400i'],
     },
   ],
   headerFontFamily: ['PT Sans', 'sans-serif'],
@@ -60,9 +65,9 @@ const typography = new Typography({
         marginBottom: rhythm(0.5),
       },
       h1: {
-        fontSize: '42px',
+        fontSize: (windowWidth > 786) ? '42px' : '28px',
         fontWeight: 300,
-        letterSpacing: '-2px',
+        letterSpacing: (windowWidth > 786) ? '-2px' : '-1px',
       },
       'ul,ol': {
         marginLeft: rhythm(2 / 3),
@@ -97,7 +102,7 @@ const typography = new Typography({
       [MOBILE_MEDIA_QUERY]: {
         html: {
           ...vr.establishBaseline(),
-          fontSize: `${14 / 16 * 100}%`,
+          fontSize: `${15 / 16 * 100}%`,
           lineHeight: 1.5,
         },
         blockquote: {
@@ -105,10 +110,25 @@ const typography = new Typography({
           color: gray(41),
           paddingLeft: rhythm(9 / 16),
           fontStyle: 'italic',
-          marginLeft: rhythm(-3 / 4),
+          marginLeft: rhythm(-2 / 4),
           marginRight: 0,
         },
       },
+      [TABLET_MEDIA_QUERY]: {
+        html: {
+          ...vr.establishBaseline(),
+          fontSize: `${15.5 / 16 * 100}%`,
+          lineHeight: 1.5,
+        },
+        blockquote: {
+          borderLeft: `${rhythm(3 / 16)} solid ${linkColor}`,
+          color: gray(41),
+          paddingLeft: rhythm(9 / 16),
+          fontStyle: 'italic',
+          marginLeft: rhythm(-1 / 4),
+          marginRight: 0,
+        },
+      }
     }
   },
 })

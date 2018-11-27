@@ -19,7 +19,7 @@ var styles = {
 let bio = () => {
   return (
     <section>
-      <h3 style={{ fontWeight: 300, letterSpacing: '-1px', marginTop: '1.5rem' }}> Bio </h3>
+      <h2 style={{ fontWeight: 300, letterSpacing: '-1px', marginTop: '1.5rem' }}> Bio </h2>
 
       <div
         style={{

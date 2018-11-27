@@ -2,9 +2,9 @@
   "name": "gatsby-starter-blog",
   "description": "Starter Gatsby Blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Santhosh Soundararajan <santhoshsoundraj@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
+    "url": "https://github.com/Santhosh114/gatsby-mdx-blog/issues"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "0.3.0",
@@ -60,15 +60,15 @@
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/Santhosh114/gatsby-mdx-blog#readme",
   "keywords": [
-    "gatsby"
+    "Data Visualization D3.js "
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/Santhosh114/gatsby-mdx-blog.git"
   },
   "scripts": {
     "dev": "gatsby develop",
