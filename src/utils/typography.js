@@ -15,11 +15,11 @@ const typography = new Typography({
   googleFonts: [
     {
       name: 'PT Sans',
-      styles: ['300', '400', '400i', '700'],
+      styles: ['300', '400', '400i'],
     },
     {
       name: 'PT Serif',
-      styles: ['300', '400', '400i', '700'],
+      styles: ['400', '400i'],
     },
   ],
   headerFontFamily: ['PT Sans', 'sans-serif'],
