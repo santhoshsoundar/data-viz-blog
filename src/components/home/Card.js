@@ -141,10 +141,10 @@ Card = Radium(Card)
 let CardList = prop => {
   return (
     <section>
-      <h3 style={{ fontWeight: 300, letterSpacing: '-1px' }}>
+      <h2 style={{ fontWeight: 300, letterSpacing: '-1px' }}>
         {' '}
         Blog & Personal Projects{' '}
-      </h3>
+      </h2>
       <div
         style={{
           display: 'grid',

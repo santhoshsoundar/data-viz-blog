@@ -92,7 +92,7 @@ const typography = new Typography({
       [MOBILE_MEDIA_QUERY]: {
         html: {
           ...vr.establishBaseline(),
-          fontSize: `${14 / 16 * 100}%`,
+          fontSize: `${15 / 16 * 100}%`,
           lineHeight: 1.5,
         },
         blockquote: {
@@ -107,7 +107,7 @@ const typography = new Typography({
       [TABLET_MEDIA_QUERY]: {
         html: {
           ...vr.establishBaseline(),
-          fontSize: `${15 / 16 * 100}%`,
+          fontSize: `${15.5 / 16 * 100}%`,
           lineHeight: 1.5,
         },
         blockquote: {
