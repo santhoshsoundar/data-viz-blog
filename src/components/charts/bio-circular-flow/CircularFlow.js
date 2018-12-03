@@ -16,6 +16,8 @@ class CircularFlow extends React.Component {
   }
 
   componentDidMount() {
+
+    console.log(window.innerWidth)
     let svg = d3.select(this._rootNode),
       width = Number(svg.style('width').slice(0, -2)),
       height = Number(svg.style('height').slice(0, -2)),
@@ -253,9 +255,8 @@ class CircularFlow extends React.Component {
     renderLegend(legendG, 'skills breakdown (self-rated out of 5)', 79)
 
     window.addEventListener("resize", resize);
-
     function resize() {
-      var wd = window.innerWidth;
+      let wd = window.innerWidth;
       if (wd < 876) {
         svg.attr("width", wd);
         svg.attr("height", (wd / 1.9043));
@@ -265,6 +266,9 @@ class CircularFlow extends React.Component {
         svg.attr("height", 460);
         svg.style('margin-top', '0px')
       }
+    }
+    if (window.innerWidth < 876) {
+      resize()
     }
 
   }

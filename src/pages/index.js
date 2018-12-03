@@ -92,7 +92,7 @@ class BlogIndex extends React.Component {
         type: 'external'
       },
       {
-        name: 'College Majors Outcome Analysis',
+        name: 'College Majors Outcome Analysis - IULab',
         month: 'October 2015',
         img: this.props.data.thumbCollege.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/collegemajors.html',
