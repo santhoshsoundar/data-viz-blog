@@ -229,17 +229,43 @@ class CircularFlow extends React.Component {
       .attr('opacity', 0)
       .attr('transform', 'translate(-35,5)')
 
-    legendG
-      .append('text')
-      .style('font-style', 'italic')
-      .text('click legend/chart to populate corresponding')
-      .attr('fill', '#999')
-      .attr('transform', 'translate(175,65)')
-    legendG.append('text')
-      .style('font-style', 'italic')
-      .text('skills breakdown, self-rated out of 5')
-      .attr('fill', '#999')
-      .attr('transform', 'translate(175,77)')
+    let renderLegend = (g, text, y_pos) => {
+      return g.append('text')
+        .style('font-style', 'italic')
+        .style('font-size', '12px')
+        .attr('fill', '#999')
+        .attr('transform', 'translate(175,' + y_pos + ')')
+        .text(text)
+    };
+
+    let legendBgRect = legendG.append('rect')
+      .attr('x', "160")
+      .attr('y', "45")
+      .attr('rx', "10")
+      .attr('ry', "10")
+      .attr('width', "250")
+      .attr('height', "45")
+      .style('stroke', 'yellow')
+      .style('stroke-width', '1px')
+      .style('fill', '#ffffc5')
+
+    renderLegend(legendG, 'click legend / chart to populate corresponding', 64)
+    renderLegend(legendG, 'skills breakdown (self-rated out of 5)', 79)
+
+    window.addEventListener("resize", resize);
+
+    function resize() {
+      var wd = window.innerWidth;
+      if (wd < 876) {
+        svg.attr("width", wd);
+        svg.attr("height", (wd / 1.9043));
+        svg.style('margin-top', '10px')
+      } else {
+        svg.attr("width", 876);
+        svg.attr("height", 460);
+        svg.style('margin-top', '0px')
+      }
+    }
 
   }
 
@@ -260,6 +286,8 @@ class CircularFlow extends React.Component {
           fontSize="11"
           fill='#242424'
           ref={this._setRef.bind(this)}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 876 460"
         />
       </div>
     )
