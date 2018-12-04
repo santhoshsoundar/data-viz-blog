@@ -27,6 +27,7 @@ class CircularFlow extends React.Component {
       data_columns = Object.keys(data[0]).filter(v => v !== 'Date' && v !== 'total')
 
     svg.append('text')
+      .attr('id', 'chart-title')
       .text('Skills Aquired Over My Graduate Study')
       .style('font-size', 24)
       .style('font-weight', 'bold')
@@ -269,6 +270,7 @@ class CircularFlow extends React.Component {
     }
     if (window.innerWidth < 876) {
       resize()
+      d3.select('#chart-title').style('fill', '#C0C0C0')
     }
 
   }
