@@ -38,11 +38,11 @@ let bio = () => {
         </p>
 
         <p style={{ marginBottom: -5 }}>
-          I recieved a masters degree in Data Science from{' '}
+          I received a masters degree in Data Science from{' '}
           <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
             Indiana University <FaGraduationCap />
           </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
-          with which I ended I spending most of my time facinated by visual encodings. The following is a wheel calandar inspired
+          with which I ended I spending most of my time fascinated by visual encodings. The following is a wheel calandar inspired
           time series chart of time spent on various domains within data science until I started working full-time on data visualizations.
         </p>
         <CircularFlow />

@@ -37,7 +37,7 @@ class BlogIndex extends React.Component {
         type: 'local'
       },
       {
-        name: 'Live Map of SFMuni Bus Service',
+        name: 'Live Map of San Francisco Muni Buses',
         month: 'October 2017',
         img: this.props.data.thumbSf.childImageSharp.fluid,
         github: 'https://github.com/Santhosh114/SFO-transit-mapViz',
@@ -92,7 +92,7 @@ class BlogIndex extends React.Component {
         type: 'external'
       },
       {
-        name: 'College Majors Outcome Analysis',
+        name: 'College Majors Outcome Analysis - IULab',
         month: 'October 2015',
         img: this.props.data.thumbCollege.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/collegemajors.html',

@@ -1,6 +1,6 @@
 import Typography from 'typography'
 import gray from 'gray-percentage'
-import { MOBILE_MEDIA_QUERY, TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import verticalRhythm from 'compass-vertical-rhythm'
 import './../styles/global.css'
 
@@ -102,7 +102,7 @@ const typography = new Typography({
       [MOBILE_MEDIA_QUERY]: {
         html: {
           ...vr.establishBaseline(),
-          fontSize: `${15 / 16 * 100}%`,
+          fontSize: `${14 / 16 * 100}%`,
           lineHeight: 1.5,
         },
         blockquote: {
@@ -114,21 +114,6 @@ const typography = new Typography({
           marginRight: 0,
         },
       },
-      [TABLET_MEDIA_QUERY]: {
-        html: {
-          ...vr.establishBaseline(),
-          fontSize: `${15.5 / 16 * 100}%`,
-          lineHeight: 1.5,
-        },
-        blockquote: {
-          borderLeft: `${rhythm(3 / 16)} solid ${linkColor}`,
-          color: gray(41),
-          paddingLeft: rhythm(9 / 16),
-          fontStyle: 'italic',
-          marginLeft: rhythm(-1 / 4),
-          marginRight: 0,
-        },
-      }
     }
   },
 })
