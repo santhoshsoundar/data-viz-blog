@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "d3-blog",
+  "description": "Over Engineered Data Viz Blog",
   "version": "1.0.0",
   "author": "Santhosh Soundararajan <santhoshsoundraj@gmail.com>",
   "bugs": {
@@ -62,7 +62,7 @@
   },
   "homepage": "https://github.com/Santhosh114/gatsby-mdx-blog#readme",
   "keywords": [
-    "Data Visualization D3.js "
+    "Data Visualization D3.js React.js Gatsby.js MDX GraphQL"
   ],
   "license": "MIT",
   "main": "n/a",
