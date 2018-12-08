@@ -74,15 +74,15 @@ let RootHeader = () => {
           <LinkIcons to="https://github.com/Santhosh114" ariaLabel="Github">
             <FaGithubAlt key="git" />
           </LinkIcons>
-          {/* <a
-            href='Resume-Santhosh-Soundararajan.pdf'
+          <a
+            href='Santhosh_Soundararajan_Resume.pdf'
             aria-label="Resume"
             className="icons"
             target="_blank"
             style={{ verticalAlign: 'text-bottom' }}
           >
             Resume
-          </a> */}
+          </a>
         </ul>
       </StyleRoot>
       <p
