@@ -37,14 +37,21 @@ let bio = () => {
           analysis tools to infographics for visual storytelling.<br />
         </p>
 
-        <p style={{ marginBottom: -5 }}>
-          I received a masters degree in Data Science from{' '}
-          <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
-            Indiana University <FaGraduationCap />
-          </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
-          with which I ended up spending most of my time fascinated by visual encodings. The following is a wheel calandar inspired
-          chart of time spent on various domains within data science until I started working full-time on data visualizations.
+        <StyleRoot>
+          <p style={{
+            marginBottom: -2,
+            '@media (max-width: 800px)': {
+              marginBottom: -5,
+            },
+          }}>
+            I received a masters degree in Data Science from{' '}
+            <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
+              Indiana University <FaGraduationCap />
+            </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
+            with which I ended up spending most of my time fascinated by visual encodings. The following is a wheel calandar inspired
+            chart of time spent on various domains within data science until I started working full-time on data visualizations.
         </p>
+        </StyleRoot>
         <CircularFlow />
         <br />
         <p>
