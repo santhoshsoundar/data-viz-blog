@@ -74,7 +74,7 @@ let RootHeader = () => {
           <LinkIcons to="https://github.com/Santhosh114" ariaLabel="Github">
             <FaGithubAlt key="git" />
           </LinkIcons>
-          <a
+          {/* <a
             href='Santhosh_Soundararajan_Resume.pdf'
             aria-label="Resume"
             className="icons"
@@ -82,7 +82,7 @@ let RootHeader = () => {
             style={{ verticalAlign: 'text-bottom' }}
           >
             Resume
-          </a>
+          </a> */}
         </ul>
       </StyleRoot>
       <p
