@@ -34,17 +34,26 @@ let bio = () => {
           models that exert least perceptual friction. <br />
           Have spent most of my recent years building data-driven products
           tailor-made for requirements ranging from self-containing exploratory
-          analysis tools to infographics for visual storytelling.<br />
+          analysis tools to infographics for visual storytelling.
+          My design process values intution over gratuitous extravagance.
         </p>
 
-        <p style={{ marginBottom: -5 }}>
-          I received a masters degree in Data Science from{' '}
-          <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
-            Indiana University <FaGraduationCap />
-          </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
-          with which I ended up spending most of my time fascinated by visual encodings. The following is a wheel calandar inspired
-          chart of time spent on various domains within data science until I started working full-time on data visualizations.
+        <StyleRoot>
+          <p style={{
+            marginBottom: -2,
+            '@media (max-width: 800px)': {
+              marginBottom: -5,
+            },
+          }}>
+            I received my masters degree in Data Science from{' '}
+            <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
+              Indiana University <FaGraduationCap />
+            </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{'. '}
+            I then ended up spending most of my time with it fascinated by visual encodings.
+            Would like to present this wheel calandar inspired
+            chart of time spent on various domains within data science, starting from my masters upto work.
         </p>
+        </StyleRoot>
         <CircularFlow />
         <br />
         <p>

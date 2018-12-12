@@ -16,8 +16,6 @@ class CircularFlow extends React.Component {
   }
 
   componentDidMount() {
-
-    console.log(window.innerWidth)
     let svg = d3.select(this._rootNode),
       width = Number(svg.style('width').slice(0, -2)),
       height = Number(svg.style('height').slice(0, -2)),
