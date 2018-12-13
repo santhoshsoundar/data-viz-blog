@@ -88,7 +88,7 @@ let bio = () => {
             <li style={styles}>
               {' '}
               Playing chess, mostly Blits & Bullet. Feel free to challenge me at{' '}
-              <a href="https://www.chess.com/member/santhoshsoundar">
+              <a target="_blank" href="https://www.chess.com/stats/live/blitz/santhoshsoundar">
                 Chess.com <FaChess />
               </a>{' '}
             </li>
