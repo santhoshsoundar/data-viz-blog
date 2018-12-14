@@ -26,7 +26,7 @@ class CircularFlow extends React.Component {
 
     svg.append('text')
       .attr('id', 'chart-title')
-      .text('Skills Aquired Over My Graduate Study')
+      .text('Skills Aquired Over Graduate Study')
       .style('font-size', 24)
       .style('font-weight', 'bold')
       .attr('fill', '#e1e1e1')
