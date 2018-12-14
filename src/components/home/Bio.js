@@ -33,16 +33,15 @@ let bio = () => {
           I am a data visualization engineer passionate about developing visual
           models that exert least perceptual friction. <br />
           Have spent most of my recent years building data-driven products
-          tailor-made for requirements ranging from self-containing exploratory
-          analysis tools to infographics for visual storytelling.
+          tailor-made to support self-containing exploratory analysis & infographics for visual storytelling.
           My design process values intution over gratuitous extravagance.
         </p>
 
         <StyleRoot>
           <p style={{
-            marginBottom: -2,
+            marginBottom: 5,
             '@media (max-width: 800px)': {
-              marginBottom: -5,
+              marginBottom: 0,
             },
           }}>
             I received my masters degree in Data Science from{' '}
