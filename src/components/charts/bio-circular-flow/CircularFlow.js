@@ -30,7 +30,7 @@ class CircularFlow extends React.Component {
       .style('font-size', 24)
       .style('font-weight', 'bold')
       .attr('fill', '#e1e1e1')
-      .attr('transform', 'translate(' + 380 + ',' + 35 + ')')
+      .attr('transform', 'translate(' + 400 + ',' + 35 + ')')
 
 
     let x = d3.scaleBand()
