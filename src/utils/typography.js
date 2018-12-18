@@ -15,7 +15,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: 'PT Sans',
-      styles: ['300', '400', '400i'],
+      styles: ['400', '400i'],
     },
     {
       name: 'PT Serif',
