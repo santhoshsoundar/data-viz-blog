@@ -19,7 +19,12 @@ var styles = {
 let bio = () => {
   return (
     <section>
-      <h2 style={{ fontWeight: 300, letterSpacing: '-1px', marginTop: '1.5rem' }}> Bio </h2>
+      <h2
+        style={{ fontWeight: 300, letterSpacing: '-1px', marginTop: '1.5rem' }}
+      >
+        {' '}
+        Bio{' '}
+      </h2>
 
       <div
         style={{
@@ -33,31 +38,34 @@ let bio = () => {
           I am a data visualization engineer passionate about developing visual
           models that exert least perceptual friction. <br />
           Have spent most of my recent years building data-driven products
-          tailor-made to support self-containing exploratory analysis & infographics for visual storytelling.
-          My design process values intution over gratuitous extravagance.
+          tailor-made to support self-containing exploratory analysis &
+          infographics for visual storytelling. My design process values
+          intuition over gratuitous extravagance.
         </p>
-
         <StyleRoot>
-          <p style={{
-            marginBottom: 5,
-            '@media (max-width: 800px)': {
-              marginBottom: 0,
-            },
-          }}>
+          <p
+            style={{
+              marginBottom: 5,
+              '@media (max-width: 800px)': {
+                marginBottom: 0,
+              },
+            }}
+          >
             I received my masters degree in Data Science from{' '}
             <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
               Indiana University <FaGraduationCap />
-            </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
-            with which I ended up spending most of my time, fascinated by visual encodings.
-            I would like to present this wheel calandar inspired
-            chart of time spent on various domains within data science, starting from my masters upto work.
-        </p>
+            </a>, Bloomington where I was introduced to info-vis and{' '}
+            <a href="https://d3js.org/">d3</a>
+            {', '}
+            with which I ended up spending most of my time, fascinated by visual
+            encodings. I would like to present this wheel calandar inspired
+            chart of time spent on various domains within data science, starting
+            from my masters upto work.
+          </p>
         </StyleRoot>
         <CircularFlow />
         <br />
-        <p>
-          Besides data visualization, I indulge myself in the following:
-        </p>
+        <p>Besides data visualization, I indulge myself in the following:</p>
         <StyleRoot>
           <ul
             style={{
@@ -68,8 +76,8 @@ let bio = () => {
           >
             <li style={styles}>
               {' '}
-              Aquascaping full/semi-planted fresh water tanks & keeping schooling
-              fishes
+              Aquascaping full/semi-planted fresh water tanks & keeping
+              schooling fishes
             </li>
             <li style={styles}>
               {' '}
@@ -87,14 +95,18 @@ let bio = () => {
             <li style={styles}>
               {' '}
               Playing chess, mostly Blits & Bullet. Feel free to challenge me at{' '}
-              <a target="_blank" rel="noopener" href="https://www.chess.com/stats/live/blitz/santhoshsoundar">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://www.chess.com/stats/live/blitz/santhoshsoundar"
+              >
                 Chess.com <FaChess />
               </a>{' '}
             </li>
           </ul>
         </StyleRoot>
       </div>
-    </section >
+    </section>
   )
 }
 
