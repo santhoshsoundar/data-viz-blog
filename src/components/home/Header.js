@@ -75,7 +75,7 @@ let RootHeader = () => {
             <FaGithubAlt key="git" />
           </LinkIcons>
           {/* <a
-            href='Resume-Santhosh-Soundararajan.pdf'
+            href='Santhosh_Soundararajan_Resume.pdf'
             aria-label="Resume"
             className="icons"
             target="_blank"

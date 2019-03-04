@@ -319,7 +319,6 @@ function wrap(text, width) {
             dy = parseFloat(text.attr("dy")),
             tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
 
-        console.log(words)
         while (word = words.pop()) {
             line.push(word);
             tspan.text(line.join(" "));

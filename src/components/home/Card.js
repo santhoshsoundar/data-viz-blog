@@ -1,6 +1,6 @@
 import React from 'react'
 import { rhythm } from './../../utils/typography'
-import Radium from 'radium'
+import Radium, { StyleRoot } from 'radium'
 import Img from 'gatsby-image'
 import './../../styles/global.css'
 import { Link, graphql } from 'gatsby'
@@ -17,8 +17,8 @@ let cardFocus = {
       marginBottom: 5,
       WebkitTransition: 'all .3s ease-in-out',
       boxShadow: '0.25px 0 0.5px 0.75px rgba(0, 0, 0, 0.0825)',
-      // ':hover': cardFocus,
-      // ':focus': cardFocus,
+      ':hover': cardFocus,
+      ':focus': cardFocus,
     },
     title: {
       fontSize: '12.5px',
@@ -45,94 +45,97 @@ let cardFocus = {
 
 let Card = props => {
   return (
-    <div
-      key={props.name}
-      style={{
-        lineHeight: 1,
-        marginBottom: '2px',
-      }}
-    >
+    <StyleRoot>
+      <div
+        key={props.name}
+        style={{
+          lineHeight: 1,
+          marginBottom: '2px',
+        }}
+      >
 
-      {props.type == 'external' && (
-        <a
-          target="_blank"
-          rel="noopener"
-          href={props.link}
-          style={{
-            color: 'inherit',
-            backgroundImage: 'none',
-            boxShadow: 'none',
-            textDecoration: 'none',
-          }}
-        >
-          <span style={cardStyles.title} id={props.name + 'title'}>
-            <Img key={props.name} style={cardStyles.card} fluid={props.img} />
-            {props.name}
-          </span>
-          <br />
-          <span style={cardStyles.subTitle} id={props.name + 'sub-title'}>
-            {props.month}
-          </span>
-        </a>
-      )}
+        {props.type == 'external' && (
+          <a
+            target="_blank"
+            rel="noopener"
+            href={props.link}
+            style={{
+              color: 'inherit',
+              backgroundImage: 'none',
+              boxShadow: 'none',
+              textDecoration: 'none',
+            }}
+          >
+            <span style={cardStyles.title} id={props.name + 'title'}>
+              <Img key={props.name} style={cardStyles.card} fluid={props.img} />
+              {props.name}
+            </span>
+            <br />
+            <span style={cardStyles.subTitle} id={props.name + 'sub-title'}>
+              {props.month}
+            </span>
+          </a>
+        )}
 
-      {props.type == 'local' && (
-        <Link
-          to={props.link}
-          style={{
-            color: 'inherit',
-            backgroundImage: 'none',
-            boxShadow: 'none',
-            textDecoration: 'none',
-          }}
-        >
-          <span style={cardStyles.title} id={props.name + 'title'}>
-            <Img key={props.name} style={cardStyles.card} fluid={props.img} />
-            {props.name}
-          </span>
-          <br />
-          <span style={cardStyles.subTitle} id={props.name + 'sub-title'}>
-            {props.month}
-          </span>
-        </Link>
-      )}
+        {props.type == 'local' && (
+          <Link
+            to={props.link}
+            style={{
+              color: 'inherit',
+              backgroundImage: 'none',
+              boxShadow: 'none',
+              textDecoration: 'none',
+            }}
+          >
+            <span style={cardStyles.title} id={props.name + 'title'}>
+              <Img key={props.name} style={cardStyles.card} fluid={props.img} />
+              {props.name}
+            </span>
+            <br />
+            <span style={cardStyles.subTitle} id={props.name + 'sub-title'}>
+              {props.month}
+            </span>
+          </Link>
+        )}
 
-      {props.sandbox && (
-        <a href={props.sandbox} target="_blank" rel="noopener" className="cardIcons" aria-label={'Codepen-Menu'}>
-          <span style={cardStyles.cardIcon}>
-            <FiCodepen key={props.name} />{' '}
-          </span>
-        </a>
-      )}
+        {props.sandbox && (
+          <a href={props.sandbox} target="_blank" rel="noopener" className="cardIcons" aria-label={'Codepen-Menu'}>
+            <span style={cardStyles.cardIcon}>
+              <FiCodepen key={props.name} />{' '}
+            </span>
+          </a>
+        )}
 
-      {props.github && (
-        <a href={props.github} target="_blank" rel="noopener" className="cardIcons" aria-label={'Github-Menu'}>
-          <span style={cardStyles.cardIcon}>
-            <FaGithub key={props.name} />{' '}
-          </span>
-        </a>
-      )}
-      {props.tweet && (
-        <a href={props.tweet} target="_blank" rel="noopener" className="cardIcons" aria-label={'Twitter-Menu'}>
-          <span style={cardStyles.cardIcon}>
-            <FaTwitter key={props.name} />{' '}
-          </span>
-        </a>
-      )}
-      {props.external && (
-        <a
-          href={props.external}
-          className="cardIcons"
-          aria-label={'External-Menu'}
-          target="_blank"
-          rel="noopener"
-        >
-          <span style={cardStyles.cardIcon} className="cardIcons">
-            <FiExternalLink key={props.name} />{' '}
-          </span>
-        </a>
-      )}
-    </div>
+        {props.github && (
+          <a href={props.github} target="_blank" rel="noopener" className="cardIcons" aria-label={'Github-Menu'}>
+            <span style={cardStyles.cardIcon}>
+              <FaGithub key={props.name} />{' '}
+            </span>
+          </a>
+        )}
+        {props.tweet && (
+          <a href={props.tweet} target="_blank" rel="noopener" className="cardIcons" aria-label={'Twitter-Menu'}>
+            <span style={cardStyles.cardIcon}>
+              <FaTwitter key={props.name} />{' '}
+            </span>
+          </a>
+        )}
+        {props.external && (
+          <a
+            href={props.external}
+            className="cardIcons"
+            aria-label={'External-Menu'}
+            target="_blank"
+            rel="noopener"
+          >
+            <span style={cardStyles.cardIcon} className="cardIcons">
+              <FiExternalLink key={props.name} />{' '}
+            </span>
+          </a>
+        )}
+      </div>
+    </StyleRoot>
+
   )
 }
 
@@ -145,20 +148,28 @@ let CardList = prop => {
         {' '}
         Blog & Personal Projects{' '}
       </h2>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gridGap: rhythm(0.85),
-          marginBottom: '40px',
-          fontFamily: 'PT Sans',
-        }}
-      >
-        {prop.image_info.map(card => <Card {...card} key={card.name} />)}
-      </div>
+      <StyleRoot>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridGap: rhythm(0.85),
+            marginBottom: '40px',
+            fontFamily: 'PT Sans',
+            '@media (max-width: 800px)': {
+              gridTemplateColumns: 'repeat(2, 1fr)',
+            },
+          }}
+        >
+          {prop.image_info.map(card => <Card {...card} key={card.name} />)}
+        </div>
+      </StyleRoot>
+
     </section>
   )
 }
+
+CardList = Radium(CardList)
 
 export default CardList
 

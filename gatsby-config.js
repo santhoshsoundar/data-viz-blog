@@ -2,11 +2,11 @@ const prism = require('@mapbox/rehype-prism')
 const smartypants = require('./src/utils/remark-smartypants')
 module.exports = {
   siteMetadata: {
-    title: 'Data Viz Blog',
+    title: 'Over Engineered Data Viz Blog',
     author: 'Santhosh Soundararajan',
     description:
-      'An over engineered Data Viz Blog in conjunction with Gatsby+MDX+React+GraphQL',
-    siteUrl: 'http://santhoshfiddle.com',
+      'An over engineered Data Viz Blog built with React+Gatsby+MDX+GraphQL',
+    siteUrl: 'https://santhoshsoundar.blog/',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [

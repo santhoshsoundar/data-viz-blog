@@ -33,18 +33,26 @@ let bio = () => {
           I am a data visualization engineer passionate about developing visual
           models that exert least perceptual friction. <br />
           Have spent most of my recent years building data-driven products
-          tailor-made for requirements ranging from self-containing exploratory
-          analysis tools to infographics for visual storytelling.<br />
+          tailor-made to support self-containing exploratory analysis & infographics for visual storytelling.
+          My design process values intution over gratuitous extravagance.
         </p>
 
-        <p style={{ marginBottom: -5 }}>
-          I received a masters degree in Data Science from{' '}
-          <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
-            Indiana University <FaGraduationCap />
-          </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
-          with which I ended I spending most of my time fascinated by visual encodings. The following is a wheel calandar inspired
-          time series chart of time spent on various domains within data science until I started working full-time on data visualizations.
+        <StyleRoot>
+          <p style={{
+            marginBottom: 5,
+            '@media (max-width: 800px)': {
+              marginBottom: 0,
+            },
+          }}>
+            I received my masters degree in Data Science from{' '}
+            <a href="https://www.sice.indiana.edu/graduate/degrees/data-science/courses/index.html">
+              Indiana University <FaGraduationCap />
+            </a>, Bloomington where I was introduced to info-vis and <a href='https://d3js.org/'>d3</a>{', '}
+            with which I ended up spending most of my time, fascinated by visual encodings.
+            I would like to present this wheel calandar inspired
+            chart of time spent on various domains within data science, starting from my masters upto work.
         </p>
+        </StyleRoot>
         <CircularFlow />
         <br />
         <p>
@@ -79,7 +87,7 @@ let bio = () => {
             <li style={styles}>
               {' '}
               Playing chess, mostly Blits & Bullet. Feel free to challenge me at{' '}
-              <a href="https://www.chess.com/member/santhoshsoundar">
+              <a target="_blank" rel="noopener" href="https://www.chess.com/stats/live/blitz/santhoshsoundar">
                 Chess.com <FaChess />
               </a>{' '}
             </li>
