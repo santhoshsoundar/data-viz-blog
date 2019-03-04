@@ -25,7 +25,13 @@ const LinkIcons = props => (
       marginBottom: 0,
     }}
   >
-    <a href={props.to} rel="noopener" target={props.ariaLabel !== 'Mail' && "_blank"} className="icons" aria-label={props.ariaLabel}>
+    <a
+      href={props.to}
+      rel="noopener"
+      target={props.ariaLabel !== 'Mail' && '_blank'}
+      className="icons"
+      aria-label={props.ariaLabel}
+    >
       <span style={{ marginRight: `1rem` }}>{props.children} </span>
     </a>
   </li>
@@ -45,19 +51,19 @@ let RootHeader = () => {
             margin: '10px 0px 0 5px',
             '@media (max-width: 800px)': {
               float: `left`,
-              margin: '10px 300px 0 5px'
+              margin: '10px 300px 0 5px',
             },
             '@media (max-width: 512px)': {
               float: `left`,
-              margin: '10px 0px 0 5px'
+              margin: '10px 0px 0 5px',
             },
             '@media (max-width: 480px)': {
               float: `left`,
-              margin: '10px 200px 0 5px'
+              margin: '10px 200px 0 5px',
             },
             '@media (max-width: 440px)': {
               float: `left`,
-              margin: '10px 0px 0 5px'
+              margin: '10px 0px 0 5px',
             },
           }}
         >
@@ -65,24 +71,27 @@ let RootHeader = () => {
           <LinkIcons to="mailto:santhosh.fiddle@gmail.com" ariaLabel="Mail">
             <FiMail key="mail" />
           </LinkIcons>
-          <LinkIcons to="https://www.linkedin.com/in/santhoshsoundararajan" ariaLabel="LinkedIn">
+          <LinkIcons
+            to="https://www.linkedin.com/in/santhoshsoundararajan"
+            ariaLabel="LinkedIn"
+          >
             <FaLinkedinIn key="linkedin" />
           </LinkIcons>
           <LinkIcons to="https://twitter.com/i/likes" ariaLabel="Twitter">
             <FaTwitter key="twitter" />
           </LinkIcons>
-          <LinkIcons to="https://github.com/Santhosh114" ariaLabel="Github">
+          <LinkIcons to="https://github.com/santhoshsoundar" ariaLabel="Github">
             <FaGithubAlt key="git" />
           </LinkIcons>
-          {/* <a
-            href='Santhosh_Soundararajan_Resume.pdf'
+          <a
+            href="Santhosh_Soundararajan_Resume.pdf"
             aria-label="Resume"
             className="icons"
             target="_blank"
             style={{ verticalAlign: 'text-bottom' }}
           >
             Resume
-          </a> */}
+          </a>
         </ul>
       </StyleRoot>
       <p

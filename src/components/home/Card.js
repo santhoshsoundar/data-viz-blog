@@ -8,10 +8,10 @@ import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { FiExternalLink, FiCodepen } from 'react-icons/fi'
 
 let cardFocus = {
-  cursor: 'pointer',
-  WebkitTransform: 'scale(1.0125)',
-  boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.2)',
-},
+    cursor: 'pointer',
+    WebkitTransform: 'scale(1.0125)',
+    boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.2)',
+  },
   cardStyles = {
     card: {
       marginBottom: 5,
@@ -53,7 +53,6 @@ let Card = props => {
           marginBottom: '2px',
         }}
       >
-
         {props.type == 'external' && (
           <a
             target="_blank"
@@ -99,7 +98,13 @@ let Card = props => {
         )}
 
         {props.sandbox && (
-          <a href={props.sandbox} target="_blank" rel="noopener" className="cardIcons" aria-label={'Codepen-Menu'}>
+          <a
+            href={props.sandbox}
+            target="_blank"
+            rel="noopener"
+            className="cardIcons"
+            aria-label={'Codepen-Menu'}
+          >
             <span style={cardStyles.cardIcon}>
               <FiCodepen key={props.name} />{' '}
             </span>
@@ -107,14 +112,26 @@ let Card = props => {
         )}
 
         {props.github && (
-          <a href={props.github} target="_blank" rel="noopener" className="cardIcons" aria-label={'Github-Menu'}>
+          <a
+            href={props.github}
+            target="_blank"
+            rel="noopener"
+            className="cardIcons"
+            aria-label={'Github-Menu'}
+          >
             <span style={cardStyles.cardIcon}>
               <FaGithub key={props.name} />{' '}
             </span>
           </a>
         )}
         {props.tweet && (
-          <a href={props.tweet} target="_blank" rel="noopener" className="cardIcons" aria-label={'Twitter-Menu'}>
+          <a
+            href={props.tweet}
+            target="_blank"
+            rel="noopener"
+            className="cardIcons"
+            aria-label={'Twitter-Menu'}
+          >
             <span style={cardStyles.cardIcon}>
               <FaTwitter key={props.name} />{' '}
             </span>
@@ -135,7 +152,6 @@ let Card = props => {
         )}
       </div>
     </StyleRoot>
-
   )
 }
 
@@ -164,7 +180,6 @@ let CardList = prop => {
           {prop.image_info.map(card => <Card {...card} key={card.name} />)}
         </div>
       </StyleRoot>
-
     </section>
   )
 }
