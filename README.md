@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1c6dc027-9ff6-4e0f-ad19-b4cdf1316661/deploy-status)](https://app.netlify.com/sites/serene-austin-346756/deploys)
+
 # [SanthoshSoundar.blog](https://santhoshsoundar.blog/)
 This is my over-engineered Data Visualization blog built with Gatsby.js, an amazing react.js based site generator that managed to blow me away, coming from Jekyll counterpart. 
 
