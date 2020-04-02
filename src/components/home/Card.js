@@ -25,7 +25,7 @@ let cardFocus = {
       fontWeight: '600',
       cursor: 'pointer',
       overflow: 'hidden',
-      color: 'var(--main-mediumgrey-color)',
+      color: 'var(--main-darkgrey-color)',
       ':hover': {
         color: 'var(--main-mcnuttblue-color)',
         textDecoration: 'underline',
@@ -177,7 +177,9 @@ let CardList = prop => {
             },
           }}
         >
-          {prop.image_info.map(card => <Card {...card} key={card.name} />)}
+          {prop.image_info.map(card => (
+            <Card {...card} key={card.name} />
+          ))}
         </div>
       </StyleRoot>
     </section>

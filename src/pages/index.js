@@ -13,12 +13,20 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMdx.edges')
     let image_data = [
       {
+        name: 'Alternative Hierarchical Visual Model',
+        month: 'March, 2020',
+        img: this.props.data.thumbTree.childImageSharp.fluid,
+        link: 'https://elated-brattain-2ed5f2.netlify.com/',
+        external: 'https://elated-brattain-2ed5f2.netlify.com/',
+        type: 'external',
+      },
+      {
         name: 'Building Custom Visualizations with Shirley Wu',
         month: 'August, 2018',
         img: this.props.data.thumbShirley.childImageSharp.fluid,
         link: '/custom-viz/',
         tweet: 'https://twitter.com/Santhosh7114/status/1025276134546534400',
-        type: 'local'
+        type: 'local',
       },
       {
         name: 'BayD3 Meetup @Google',
@@ -27,14 +35,14 @@ class BlogIndex extends React.Component {
         link: '/bayd3-meetup/',
         tweet: 'https://twitter.com/Elijah_Meeks/status/1019700407231176705',
         sandbox: 'https://codesandbox.io/s/z650jv812x',
-        type: 'local'
+        type: 'local',
       },
       {
         name: 'Exploring Visual Perception: Power Law',
         month: 'May 2018',
         img: this.props.data.thumbPower.childImageSharp.fluid,
         link: '/power-law/',
-        type: 'local'
+        type: 'local',
       },
       {
         name: 'Live Map of San Francisco Muni Buses',
@@ -43,7 +51,7 @@ class BlogIndex extends React.Component {
         github: 'https://github.com/Santhosh114/SFO-transit-mapViz',
         link: 'http://serene-temple-42286.herokuapp.com/',
         external: 'http://serene-temple-42286.herokuapp.com/',
-        type: 'external'
+        type: 'external',
       },
       {
         name: 'Equinix Data Viz Challenge - DC.js',
@@ -51,7 +59,7 @@ class BlogIndex extends React.Component {
         img: this.props.data.thumbMagneto.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/equinixChallenge.html',
         external: 'http://www.santhoshfiddle.com/equinixChallenge.html',
-        type: 'external'
+        type: 'external',
       },
       {
         name: 'Expenditure Dashboard with Critique',
@@ -59,7 +67,7 @@ class BlogIndex extends React.Component {
         img: this.props.data.thumbExp.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/expdashboard.html',
         external: 'http://www.santhoshfiddle.com/expdashboard.html',
-        type: 'external'
+        type: 'external',
       },
       {
         name: 'Chernoff Faces',
@@ -67,21 +75,21 @@ class BlogIndex extends React.Component {
         img: this.props.data.thumbFaces.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/chernoff.html',
         external: 'http://www.santhoshfiddle.com/chernoff.html',
-        type: 'external'
+        type: 'external',
       },
       {
         name: 'Birth of Parallel Co-ordinates',
         month: 'July 2016',
         img: this.props.data.thumbParallel.childImageSharp.fluid,
         link: '/parallel-coordinates/',
-        type: 'local'
+        type: 'local',
       },
       {
         name: 'Critique of Precinct Level Map',
         month: 'September 2015',
         img: this.props.data.thumbPrecinct.childImageSharp.fluid,
         link: '/precinct-critique/',
-        type: 'local'
+        type: 'local',
       },
       {
         name: 'Airport Evolution - Temporal Viz with Animation',
@@ -89,7 +97,7 @@ class BlogIndex extends React.Component {
         img: this.props.data.thumbAirportBar.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/airport.html',
         external: 'http://www.santhoshfiddle.com/airport.html',
-        type: 'external'
+        type: 'external',
       },
       {
         name: 'College Majors Outcome Analysis - IULab',
@@ -97,7 +105,7 @@ class BlogIndex extends React.Component {
         img: this.props.data.thumbCollege.childImageSharp.fluid,
         link: 'http://www.santhoshfiddle.com/collegemajors.html',
         external: 'http://www.santhoshfiddle.com/collegemajors.html',
-        type: 'external'
+        type: 'external',
       },
     ]
 
@@ -146,6 +154,9 @@ export const pageQuery = graphql`
         }
       }
     }
+    thumbTree: file(relativePath: { eq: "thumb_tree_model.png" }) {
+      ...cardFluidImage
+    }
     thumbShirley: file(relativePath: { eq: "thumb_shirley.png" }) {
       ...cardFluidImage
     }
@@ -182,11 +193,6 @@ export const pageQuery = graphql`
   }
 `
 
-
-
-
-
-
 // Upcoming posts
 
 // {
@@ -201,7 +207,6 @@ export const pageQuery = graphql`
 // thumbKepler: file(relativePath: { eq: "thumb_kepler.png" }) {
 //   ...cardFluidImage
 // }
-
 
 // {
 //   name: 'Reusable Module In Action',
