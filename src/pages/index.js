@@ -13,6 +13,14 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMdx.edges')
     let image_data = [
       {
+        name: 'Roll Rates Analysis Dashboard',
+        month: 'May, 2020',
+        img: this.props.data.thumbLoanpal.childImageSharp.fluid,
+        link: 'https://reverent-aryabhata-c3e3ef.netlify.app/',
+        external: 'https://reverent-aryabhata-c3e3ef.netlify.app/',
+        type: 'external',
+      },
+      {
         name: 'Alternative Hierarchical Visual Model',
         month: 'March, 2020',
         img: this.props.data.thumbTree.childImageSharp.fluid,
@@ -153,6 +161,9 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    thumbLoanpal: file(relativePath: { eq: "thumb_loanpal_rr.png" }) {
+      ...cardFluidImage
     }
     thumbTree: file(relativePath: { eq: "thumb_tree_model.png" }) {
       ...cardFluidImage
