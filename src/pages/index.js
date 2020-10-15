@@ -13,11 +13,21 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMdx.edges')
     let image_data = [
       {
+        name: 'Exoplanet - React Chart Components (Hooks)',
+        month: 'September, 2020',
+        img: this.props.data.thumbExoplanet.childImageSharp.fluid,
+        link: 'https://tender-euler-741952.netlify.app/',
+        external: 'https://tender-euler-741952.netlify.app/',
+        github: 'https://github.com/santhoshsoundar/exoplanet-dashboard',
+        type: 'external',
+      },
+      {
         name: 'Alternative Hierarchical Visual Model',
         month: 'March, 2020',
         img: this.props.data.thumbTree.childImageSharp.fluid,
         link: 'https://elated-brattain-2ed5f2.netlify.com/',
         external: 'https://elated-brattain-2ed5f2.netlify.com/',
+        github: 'https://github.com/santhoshsoundar/hierarchical-visual-models',
         type: 'external',
       },
       {
@@ -188,6 +198,9 @@ export const pageQuery = graphql`
       ...cardFluidImage
     }
     thumbCollege: file(relativePath: { eq: "thumb_college_majors.png" }) {
+      ...cardFluidImage
+    }
+    thumbExoplanet: file(relativePath: { eq: "thumb_exoplanet.png" }) {
       ...cardFluidImage
     }
   }
