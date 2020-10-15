@@ -31,6 +31,15 @@ class BlogIndex extends React.Component {
         type: 'external',
       },
       {
+        name: 'Roll Rates Analysis Dashboard',
+        month: 'May, 2020',
+        img: this.props.data.thumbLoanpal.childImageSharp.fluid,
+        link: 'https://reverent-aryabhata-c3e3ef.netlify.app/',
+        external: 'https://reverent-aryabhata-c3e3ef.netlify.app/',
+        github: 'https://github.com/santhoshsoundar/roll-rates-analysis',
+        type: 'external',
+      },
+      {
         name: 'Building Custom Visualizations with Shirley Wu',
         month: 'August, 2018',
         img: this.props.data.thumbShirley.childImageSharp.fluid,
@@ -163,6 +172,9 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    thumbLoanpal: file(relativePath: { eq: "thumb_loanpal_rr.png" }) {
+      ...cardFluidImage
     }
     thumbTree: file(relativePath: { eq: "thumb_tree_model.png" }) {
       ...cardFluidImage
