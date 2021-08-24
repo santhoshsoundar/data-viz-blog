@@ -4,7 +4,7 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope')
 
-GLOBAL.self = GLOBAL
+window.self = window
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions

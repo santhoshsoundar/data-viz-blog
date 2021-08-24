@@ -11,6 +11,6 @@ At the core of this blog is [Gatsby](https://next.gatsbyjs.org/), as described a
 - Typography.js, allows site wide font styling/scaling and layout setting 
 - Syntax highlighting with [rehype-prism](https://github.com/mapbox/rehype-prism/blob/master/index.js) edited to match [Observable](https://beta.observablehq.com/) code theme. 
 
-
+hnfh fyfmj
 ## MDX
 This was not possible without this amazing project - [MDX](https://mdxjs.com/) that lets blogging engine to include react components with-in the post.md files by extending them to post.mdx that could hold have react magic. Special thanks to [ChristopherBiscardi](https://github.com/ChristopherBiscardi) who made MDX possible and for responding to my integration issues along with [silvenon](https://github.com/silvenon) who was a reference point for MDX+Gatsby over-engineering madness. 
